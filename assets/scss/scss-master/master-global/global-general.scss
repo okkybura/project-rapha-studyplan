@@ -24,10 +24,16 @@
     --color-quinary                                             : #1F2FBE;
 
     --color-white                                               : #FFFFFF;
-    --color-black                                               : #171A21;
-    --color-grey-super-light                                    : #FAFAFA;
-    --color-grey-light                                          : #E7E7E8;
-    --color-grey                                                : #3B3F48;
+    --color-black                                               : #000000;
+    --color-grey-super-light                                    : #f7f7f7;
+    --color-grey-light                                          : #E4E4E7;
+    --color-grey                                                : #71717A;
+
+    --color-blue                                                : #2563EB;
+    --color-brown                                               : #CA8A04;
+    --color-green                                               : #16A34A;
+    --color-orange                                              : #EA580C;
+    --color-purple                                              : #9333EA;
 
     // Transition
 
@@ -56,7 +62,7 @@
 
     // Font - Weight
 
-    --font-weight-title                                         : 900;
+    --font-weight-title                                         : 700;
     --font-weight-subtitle                                      : 400;
     --font-weight-description                                   : 400;
     --font-weight-date                                          : 400;
@@ -83,7 +89,7 @@
     // Font - Size
 
     --font-size-general                                         : 16;
-    --font-size-title                                           : 75;
+    --font-size-title                                           : 30;
     --font-size-subtitle                                        : 16;
     --font-size-description                                     : 18;
     --font-size-date                                            : 16;
@@ -96,19 +102,19 @@
     --font-size-textprice                                       : 20;
     --font-size-sellprice                                       : 55;
 
-    --font-size-display1                                        : 60px;
-    --font-size-display2                                        : 60px;
-    --font-size-display3                                        : 60px;
-    --font-size-display4                                        : 60px;
-    --font-size-h1                                              : 48px;
-    --font-size-h2                                              : 32px;
-    --font-size-h3                                              : 28px;
-    --font-size-h4                                              : 24px;
-    --font-size-h5                                              : 20px;
-    --font-size-h6                                              : 16px;
-    --font-size-p                                               : 14px;
-    --font-size-small                                           : 12px;
-    --font-size-smallest                                        : 10px;
+    --font-size-display1                                        : 60;
+    --font-size-display2                                        : 60;
+    --font-size-display3                                        : 60;
+    --font-size-display4                                        : 60;
+    --font-size-h1                                              : 48;
+    --font-size-h2                                              : 32;
+    --font-size-h3                                              : 30;
+    --font-size-h4                                              : 24;
+    --font-size-h5                                              : 20;
+    --font-size-h6                                              : 16;
+    --font-size-p                                               : 14;
+    --font-size-small                                           : 12;
+    --font-size-smallest                                        : 10;
 
     // Letter Spacing
 
@@ -172,7 +178,7 @@ body {
 
     color                       : var(--color-black);
 
-    background                  : var(--color-grey-super-light);
+    background                  : var(--color-white);
 
     &.icv__body {
         overflow                : auto !important;
@@ -296,10 +302,10 @@ svg {
 // Grid
 
 .container {
-    @include py-5;
+    @include py-3;
     @include px-1;
 
-    max-width                   : calc(1500 / var(--vw) * var(--multiplier));
+    max-width                   : calc(1260 / var(--vw) * var(--multiplier));
 }
 
 .row {
@@ -458,12 +464,10 @@ svg {
 // Text
 
 .title {
-    @include mb-4;
-
     .text-title {
         font-family             : var(--font-family-title);
-        font-weight             : var(--font-weight-title);                  
-        font-size               : calc(var(--font-size-title) / var(--vw) * var(--multiplier));
+        font-weight             : var(--font-weight-title);
+        font-size               : calc(var(--font-size-title) / var(--vw) * var(--multiplier));                  
 
         line-height             : 1.5;
 
@@ -474,24 +478,22 @@ svg {
 }
 
 .subtitle {
-    @include mb-4;
-
     .text-subtitle {
         font-family             : var(--font-family-subtitle);
-        font-weight             : var(--font-weight-subtitle);                       
-        font-size               : calc(var(--font-size-subtitle) / var(--vw) * var(--multiplier));
+        font-weight             : var(--font-weight-subtitle);    
+        font-size               : calc(var(--font-size-subtitle) / var(--vw) * var(--multiplier));                        
 
         line-height             : 1.5;
 
-        color                   : var(--color-black);
+        color                   : var(--color-grey);
     }
 }
 
 .desc {
     .text-description {
         font-family             : var(--font-family-description);
-        font-weight             : var(--font-weight-description);                     
-        font-size               : calc(var(--font-size-description) / var(--vw) * var(--multiplier));
+        font-weight             : var(--font-weight-description);                
+        font-size               : calc(var(--font-size-description) / var(--vw) * var(--multiplier));          
 
         line-height             : 1.65;
 
@@ -518,7 +520,7 @@ svg {
     > span {
         font-family             : var(--font-family-date);
         font-weight             : var(--font-weight-date);
-        font-size               : calc(var(--font-size-date) / var(--vw) * var(--multiplier));
+        font-size               : calc(var(--font-size-date) / var(--vw) * var(--multiplier));     
 
         line-height             : 1.25;        
     }
@@ -530,7 +532,7 @@ svg {
     > span {
         font-family             : var(--font-family-number);
         font-weight             : var(--font-weight-number);
-        font-size               : calc(var(--font-size-number) / var(--vw) * var(--multiplier));
+        font-size               : calc(var(--font-size-number) / var(--vw) * var(--multiplier));     
 
         line-height             : 1.25;
 

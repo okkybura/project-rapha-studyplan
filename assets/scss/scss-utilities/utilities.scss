@@ -11,10 +11,10 @@ $color-quarter                                                  : #D9EBF3;
 $color-quinary                                                  : #1F2FBE; 
 
 $color-white                                                    : #FFFFFF;
-$color-black                                                    : #171A21;
+$color-black                                                    : #000000;
 $color-grey-super-light                                         : #FAFAFA;
-$color-grey-light                                               : #E7E7E8;
-$color-grey                                                     : #3B3F48;
+$color-grey-light                                               : #E4E4E7;
+$color-grey                                                     : #71717A;
 
 // =============================================================================
 // String Replace
@@ -443,6 +443,60 @@ $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px ) !defau
     flex-wrap           : wrap;
 
     margin              : 0rem -1rem 0rem -1rem;
+}
+
+// -------------------- Font Size -------------------- //
+
+@mixin d1() {
+    font-size           : calc(var(--font-size-display1) / var(--vw) * var(--multiplier));
+}
+
+@mixin d2() {
+    font-size           : calc(var(--font-size-display2) / var(--vw) * var(--multiplier));
+}
+
+@mixin d3() {
+    font-size           : calc(var(--font-size-display3) / var(--vw) * var(--multiplier));
+}
+
+@mixin d4() {
+    font-size           : calc(var(--font-size-display4) / var(--vw) * var(--multiplier));
+}
+
+@mixin h1() {
+    font-size           : calc(var(--font-size-h1) / var(--vw) * var(--multiplier));
+}
+
+@mixin h2() {
+    font-size           : calc(var(--font-size-h2) / var(--vw) * var(--multiplier));
+}
+
+@mixin h3() {
+    font-size           : calc(var(--font-size-h3) / var(--vw) * var(--multiplier));
+}
+
+@mixin h4() {
+    font-size           : calc(var(--font-size-h4) / var(--vw) * var(--multiplier));
+}
+
+@mixin h5() {
+    font-size           : calc(var(--font-size-h5) / var(--vw) * var(--multiplier));
+}
+
+@mixin h6() {
+    font-size           : calc(var(--font-size-h6) / var(--vw) * var(--multiplier));
+}
+
+@mixin p() {
+    font-size           : calc(var(--font-size-p) / var(--vw) * var(--multiplier));
+}
+
+@mixin small() {
+    font-size           : calc(var(--font-size-small) / var(--vw) * var(--multiplier));
+}
+
+@mixin smallest() {
+    font-size           : calc(var(--font-size-smallest) / var(--vw) * var(--multiplier));
 }
 
 // -------------------- Decoration -------------------- //
