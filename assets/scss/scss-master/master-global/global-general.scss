@@ -17,7 +17,7 @@
 
     // Color
 
-    --color-primary                                             : #1F2FBE;
+    --color-primary                                             : #2563EB;
     --color-secondary                                           : #357EC2;
     --color-tertiary                                            : #3E35C2;
     --color-quarter                                             : #D9EBF3;
@@ -32,8 +32,10 @@
     --color-blue                                                : #2563EB;
     --color-brown                                               : #CA8A04;
     --color-green                                               : #16A34A;
+    --color-indigo                                              : #4F46E5;
     --color-orange                                              : #EA580C;
     --color-purple                                              : #9333EA;
+    --color-red                                                 : #DC2626;
 
     // Transition
 
@@ -70,7 +72,7 @@
     --font-weight-number                                        : 900;
     --font-weight-tag                                           : 900;
     --font-weight-link                                          : 500;
-    --font-weight-button                                        : 900;
+    --font-weight-button                                        : 500;
     --font-weight-textprice                                     : 900;
     --font-weight-sellprice                                     : 900;
 
@@ -90,14 +92,14 @@
 
     --font-size-general                                         : 16;
     --font-size-title                                           : 30;
-    --font-size-subtitle                                        : 16;
+    --font-size-subtitle                                        : 15;
     --font-size-description                                     : 18;
     --font-size-date                                            : 16;
     --font-size-caption                                         : 16;
     --font-size-number                                          : 42.5;
     --font-size-tag                                             : 20;
     --font-size-link                                            : 14;
-    --font-size-button                                          : 16;
+    --font-size-button                                          : 15;
     --font-size-icon                                            : 12;
     --font-size-textprice                                       : 20;
     --font-size-sellprice                                       : 55;
@@ -112,8 +114,8 @@
     --font-size-h4                                              : 24;
     --font-size-h5                                              : 20;
     --font-size-h6                                              : 16;
-    --font-size-p                                               : 14;
-    --font-size-small                                           : 12;
+    --font-size-p                                               : 15;
+    --font-size-small                                           : 13;
     --font-size-smallest                                        : 10;
 
     // Letter Spacing
@@ -540,73 +542,6 @@ svg {
     }
 }
 
-// Tag
-
-.tag {
-    > span {
-        @include position-relative;
-
-        @include display-inline-flex;
-
-        @include align-items-center;
-
-        @include text-transform-uppercase;
-
-        justify-content         : center;
-
-        width                   : calc(90 / var(--vw) * var(--multiplier));
-        height                  : calc(90 / var(--vw) * var(--multiplier));
-
-        font-family             : var(--font-family-caption);
-        font-weight             : var(--font-weight-caption);
-        font-size               : calc(var(--font-size-caption) / var(--vw) * var(--multiplier));
-
-        line-height             : 1;
-
-        color                   : var(--color-black);
-
-        background              : var(--color-white);
-
-        border                  : calc(3 / var(--vw) * var(--multiplier)) solid var(--color-black);
-        border-radius           : 100%;
-
-        &:before {
-            @include position-absolute;
-
-            content             : '';
-
-            width               : calc(77.5 / var(--vw) * var(--multiplier));
-            height              : calc(77.5 / var(--vw) * var(--multiplier));
-
-            top                 : 50%;
-            left                : 50%;
-
-            transform           : translate(-50%, -50%);
-
-            background          : transparent;
-
-            border              : calc(3 / var(--vw) * var(--multiplier)) solid var(--color-black);
-            border-radius       : 100%;
-        }
-    }
-
-    // Tertiary
-
-    &.tag-tertiary {
-        > span {
-            color               : var(--color-white);
-
-            background          : var(--color-tertiary);
-
-            border              : calc(3 / var(--vw) * var(--multiplier)) solid var(--color-tertiary);
-
-            &:before {
-                border          : calc(3 / var(--vw) * var(--multiplier)) solid var(--color-white);
-            }
-        }
-    }
-}
-
 // Price
 
 .price {
@@ -650,8 +585,6 @@ svg {
 
     @include p-0;
 
-    @include text-transform-uppercase;
-
     font-family                 : var(--font-family-button);
     font-weight                 : var(--font-weight-button);
     font-size                   : calc(var(--font-size-button) / var(--vw) * var(--multiplier));
@@ -667,13 +600,15 @@ svg {
     }
 
     > span {
-        @include display-flex;
+        &.wrapper {
+            @include display-flex;
 
-        @include align-items-center;
+            @include align-items-center;
 
-        justify-content         : center;
+            justify-content         : center;
 
-        padding                 : calc(20 / var(--vw) * var(--multiplier)) calc(50 / var(--vw) * var(--multiplier));
+            border-radius           : calc(5 / var(--vw) * var(--multiplier));
+        }
 
         > span {
             @include position-relative;
@@ -683,7 +618,7 @@ svg {
 
                 @include align-items-center;
 
-                @include mx-2;
+                @include ml-2;
 
                 justify-content         : center;
 
@@ -850,6 +785,65 @@ svg {
                     background          : var(--color-white);
 
                     box-shadow          : 0 0 0 calc(2 / var(--vw) * var(--multiplier)) var(--color-black) inset;
+                }
+            }
+        }
+    }
+
+    // Transparent
+
+    &.btn-transparent {
+        > span {
+            &.wrapper {
+                @include py-2;
+                @include px-3;
+            }
+        }
+
+        &:hover {
+            > span {
+                &.wrapper {
+                    background                      : var(--color-grey-super-light); 
+                }
+            }
+        }
+    }
+
+    // Icon
+
+    &.btn-icon {
+        > span {
+            > span {
+                &.icon {
+                    @include display-inline-flex;
+
+                    @include align-items-center;
+
+                    justify-content             : center;
+
+                    width                       : calc(37.5 / var(--vw) * var(--multiplier));
+                    height                      : calc(37.5 / var(--vw) * var(--multiplier));
+
+                    background                  : var(--color-white);
+
+                    border                      : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                    border-radius               : calc(7.5 / var(--vw) * var(--multiplier));
+                }
+            }
+        }
+
+        &:hover {
+            > span {
+                > span {
+                    &.icon {
+                        background              : rgba($color-primary, 0.025);
+
+                        border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-primary);
+
+                        svg {
+                            color               : var(--color-primary);
+                        }
+                    }
                 }
             }
         }

@@ -118,6 +118,7 @@
                             @include col-6;
 
                             @include px-2;
+                            @include mb-4;
                         }
                     }
                 }
@@ -141,12 +142,20 @@ svg {
         color       : var(--color-green);
     }
 
+    &.icon-indigo {
+        color       : var(--color-indigo);
+    }
+
     &.icon-orange {
         color       : var(--color-orange);
     }
 
     &.icon-purple {
         color       : var(--color-purple);
+    }
+
+    &.icon-red {
+        color       : var(--color-red);
     }
 }
 
@@ -162,6 +171,409 @@ svg {
     }
 
     // ----- Main ----- //
+
+    // Achievement List
+
+    .achievement-list {
+
+        // Primary
+
+        &.primary {
+            .section-wrapper {
+
+                // Primary
+
+                &.primary {
+                    padding                 : calc(25 / var(--vw) * var(--multiplier));
+                    
+                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
+                }
+            }
+
+            // Header
+
+            .achievement-list-header {
+                @include mb-4;
+
+                .header-wrapper {
+
+                    // Primary
+                    
+                    &.primary {
+                        @include display-flex;
+
+                        @include align-items-center;
+
+                        > .wrapper-inner {
+                            &:last-child {
+                                @include ml-auto;
+
+                                flex-shrink             : 0; 
+                            }
+                        }
+                    }
+                }
+
+                .header-text {
+                    .title {
+                        .text-title {
+                            @include mb-0;
+
+                            @include h4;
+
+                            font-weight     : var(--font-weight-semibold);
+                        }
+                    }
+                }
+            }
+
+            // Content
+
+            .achievement-list-content {
+                .content-list {
+                    > ul {
+                        @include pl-0;
+
+                        list-style                          : none;
+
+                        > li {
+                            @include mb-3;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+
+                            .list-wrapper {
+
+                                // Primary
+
+                                &.primary {
+                                    @include display-flex;
+
+                                    @include align-items-center;
+                                    
+                                    @include p-3;
+
+                                    background              : rgba($color-grey-super-light, 0.85); 
+
+                                    border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+                                    
+                                    > .wrapper-inner {
+                                        &:last-child {
+                                            @include ml-auto;
+
+                                            flex-shrink     : 0;
+                                        }
+
+                                        > .outer {
+                                            @include display-flex;
+
+                                            @include align-items-center;
+                                        }
+                                    }
+
+                                    .list-icon {
+                                        @include mr-3;
+
+                                        .icon {
+                                            @include display-inline-flex;
+
+                                            @include align-items-center;
+
+                                            justify-content             : center;
+
+                                            width                       : calc(40 / var(--vw) * var(--multiplier));
+                                            height                      : calc(40 / var(--vw) * var(--multiplier));
+
+                                            background                  : var(--color-white);
+
+                                            border-radius               : calc(5 / var(--vw) * var(--multiplier));
+                                            
+                                            box-shadow                  : 0 1px 2px 0 rgb($color-black, 0.10);
+                                        }
+                                    }
+
+                                    .list-text {
+                                        .title {
+                                            .text-title {
+                                                @include mb-0;
+
+                                                @include h6;
+
+                                                font-weight             : var(--font-weight-medium);
+                                            }
+                                        }
+
+                                        .subtitle {
+                                            .text-subtitle {
+                                                @include p;
+                                            }
+                                        }
+                                    }
+
+                                    .list-caption {
+                                        .caption {
+                                            > span {
+                                                @include small;
+
+                                                color                   : var(--color-grey);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Activity List
+
+    .activity-list {
+
+        // Primary
+
+        &.primary {
+            .section-wrapper {
+
+                // Primary
+
+                &.primary {
+                    padding                 : calc(25 / var(--vw) * var(--multiplier));
+                    
+                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
+                }
+            }
+
+            // Header
+
+            .activity-list-header {
+                @include mb-4;
+
+                .header-wrapper {
+
+                    // Primary
+                    
+                    &.primary {
+                        @include display-flex;
+
+                        @include align-items-center;
+
+                        > .wrapper-inner {
+                            &:last-child {
+                                @include ml-auto;
+
+                                flex-shrink             : 0; 
+                            }
+                        }
+                    }
+                }
+
+                .header-text {
+                    .title {
+                        .text-title {
+                            @include mb-0;
+
+                            @include h4;
+
+                            font-weight     : var(--font-weight-semibold);
+                        }
+                    }
+                }
+            }
+
+            // Content
+
+            .activity-list-content {
+                .content-list {
+                    > ul {
+                        @include pl-0;
+
+                        list-style                          : none;
+
+                        > li {
+                            @include mb-3;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+
+                            .list-wrapper {
+
+                                // Primary
+
+                                &.primary {
+                                    @include display-flex;
+
+                                    @include align-items-center;
+                                    
+                                    @include p-3;
+
+                                    background              : rgba($color-grey-super-light, 0.85); 
+
+                                    border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+
+                                    transition              : 0.5s var(--cubic-bezier-1);
+
+                                    &.special {
+                                        @include p-4;
+
+                                        background                          : rgba($color-primary, 0.05); 
+
+                                        border                              : calc(2 / var(--vw) * var(--multiplier)) solid rgba($color-primary, 0.25);
+
+                                        .list-icon {
+                                            .icon {
+                                                width                       : calc(40 / var(--vw) * var(--multiplier));
+                                                height                      : calc(40 / var(--vw) * var(--multiplier));
+
+                                                background                  : var(--color-white);
+
+                                                border-radius               : 100%;
+                                                
+                                                box-shadow                  : 0 1px 2px 0 rgb($color-black, 0.10);
+                                            }
+                                        }
+
+                                        .list-text {
+                                            .title {
+                                                .text-title {
+                                                    @include h5;
+
+                                                    font-weight             : var(--font-weight-bold);
+                                                }
+                                            }
+
+                                            .subtitle {
+                                                .text-subtitle {
+                                                    @include h6;
+
+                                                    color                   : var(--color-black);
+                                                }
+                                            }
+                                        }
+
+                                        .list-tag {
+                                            .tag {
+                                                > span {
+                                                    background              : var(--color-white);
+                                                }
+                                            }
+                                        }
+
+                                        &:hover {
+                                            background                      : rgba($color-primary, 0.1); 
+                                        }
+                                    }
+                                    
+                                    > .wrapper-inner {
+                                        &:last-child {
+                                            @include display-flex;
+
+                                            @include align-items-center;
+
+                                            @include ml-auto;
+
+                                            flex-shrink     : 0;
+                                        }
+
+                                        > .outer {
+                                            @include display-flex;
+
+                                            @include align-items-center;
+                                        }
+                                    }
+
+                                    .list-icon {
+                                        @include mr-3;
+
+                                        .icon {
+                                            @include display-inline-flex;
+
+                                            @include align-items-center;
+
+                                            justify-content             : center;
+                                        }
+                                    }
+
+                                    .list-text {
+                                        @include mb-1;
+
+                                        .title {
+                                            .text-title {
+                                                @include mb-0;
+
+                                                @include h6;
+
+                                                font-weight             : var(--font-weight-medium);
+                                            }
+                                        }
+
+                                        .subtitle {
+                                            .text-subtitle {
+                                                @include mb-0;
+                                                
+                                                @include p;
+                                            }
+                                        }
+                                    }
+
+                                    .list-caption {
+                                        .caption {
+                                            > span {
+                                                @include p;
+
+                                                color                   : var(--color-grey);
+                                            }
+                                        }
+                                    }
+
+                                    .list-tag {
+                                        @include display-flex;
+
+                                        @include align-items-center;
+
+                                        .tag {
+                                            @include mr-1;
+
+                                            &:last-child {
+                                                @include mr-0;
+                                            }
+
+                                            > span {
+                                                @include display-inline-block;
+
+                                                @include px-2;
+
+                                                @include small;
+
+                                                font-weight             : var(--font-weight-semibold);
+
+                                                line-height             : 1.85;
+
+                                                color                   : var(--color-black);
+
+                                                border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                                border-radius           : 50em;
+                                            }
+                                        }
+                                    }
+
+                                    &:hover {
+                                        background                      : rgba($color-grey-light, 0.5);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     // Page Title
 
@@ -252,7 +664,7 @@ svg {
 
                                             @include align-items-center;
 
-                                            @include h6;
+                                            @include p;
 
                                             justify-content             : space-between;
 
@@ -272,6 +684,16 @@ svg {
 
                             .progress {
                                 @include my-2;
+
+                                height                              : calc(7.5 / var(--vw) * var(--multiplier));
+
+                                background                          : var(--color-grey-super-light);
+
+                                border-radius                       : 50em; 
+
+                                .progress-bar {
+                                    background                      : var(--color-black);
+                                }
                             }
 
                             .progress-caption {
@@ -281,7 +703,7 @@ svg {
 
                                         @include align-items-center;
 
-                                        @include h6;
+                                        @include p;
 
                                         justify-content             : space-between;
 
@@ -309,7 +731,7 @@ svg {
 
                             @include align-items-center;
 
-                            @include p;
+                            @include small;
 
                             justify-content             : space-between;
 
