@@ -212,6 +212,8 @@ svg {
             // Header
 
             .progress-detail-header {
+                @include mb-5;
+
                 .header-text {
                     .title {
                         .text-title {
@@ -220,6 +222,73 @@ svg {
                             @include h4;
 
                             font-weight     : var(--font-weight-semibold);
+                        }
+                    }
+                }
+            }
+
+            // Content
+
+            .progress-detail-content {
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        > .wrapper-inner {
+                            @include mb-3;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+                        }
+
+                        .content-progress {
+                            .progress-text {
+                                .title {
+                                    .text-title {
+                                        > span {
+                                            @include display-flex;
+
+                                            @include align-items-center;
+
+                                            @include h6;
+
+                                            justify-content             : space-between;
+
+                                            font-weight                 : var(--font-weight-medium);
+
+                                            color                       : var(--color-grey);
+
+                                            > span {
+                                                &:first-child {
+                                                    color               : var(--color-black); 
+                                                }
+                                            }
+                                        } 
+                                    }
+                                }
+                            }
+
+                            .progress {
+                                @include my-2;
+                            }
+
+                            .progress-caption {
+                                .caption {
+                                    > span {
+                                        @include display-flex;
+
+                                        @include align-items-center;
+
+                                        @include h6;
+
+                                        justify-content             : space-between;
+
+                                        color                       : var(--color-grey);
+                                    }
+                                } 
+                            }
                         }
                     }
                 }
@@ -240,7 +309,11 @@ svg {
 
                             @include align-items-center;
 
+                            @include p;
+
                             justify-content             : space-between;
+
+                            color                       : var(--color-grey);
                         }
                     }
                 }

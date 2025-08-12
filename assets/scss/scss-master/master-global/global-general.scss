@@ -168,8 +168,6 @@ html {
 // Body
 
 body {
-    @include overflow-hidden;
-
     @include pr-0;
 
     font-family                 : var(--font-family-general);

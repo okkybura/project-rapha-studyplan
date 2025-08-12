@@ -9427,7 +9427,6 @@ html {
 }
 
 body {
-  overflow: hidden;
   padding-right: 0 !important;
   font-family: var(--font-family-general);
   font-weight: var(--font-weight-regular);
@@ -10430,10 +10429,41 @@ svg.icon-purple {
   border: calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
   border-radius: calc(10 / var(--vw) * var(--multiplier));
 }
+.wizard .progress-detail.primary .progress-detail-header {
+  margin-bottom: calc(35 / var(--vw) * var(--multiplier)) !important;
+}
 .wizard .progress-detail.primary .progress-detail-header .header-text .title .text-title {
   margin-bottom: 0 !important;
   font-size: calc(var(--font-size-h4) / var(--vw) * var(--multiplier));
   font-weight: var(--font-weight-semibold);
+}
+.wizard .progress-detail.primary .progress-detail-content .content-wrapper.primary > .wrapper-inner {
+  margin-bottom: calc(15 / var(--vw) * var(--multiplier)) !important;
+}
+.wizard .progress-detail.primary .progress-detail-content .content-wrapper.primary > .wrapper-inner:last-child {
+  margin-bottom: 0 !important;
+}
+.wizard .progress-detail.primary .progress-detail-content .content-wrapper.primary .content-progress .progress-text .title .text-title > span {
+  display: flex;
+  align-items: center;
+  font-size: calc(var(--font-size-h6) / var(--vw) * var(--multiplier));
+  justify-content: space-between;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-grey);
+}
+.wizard .progress-detail.primary .progress-detail-content .content-wrapper.primary .content-progress .progress-text .title .text-title > span > span:first-child {
+  color: var(--color-black);
+}
+.wizard .progress-detail.primary .progress-detail-content .content-wrapper.primary .content-progress .progress {
+  margin-top: calc(10 / var(--vw) * var(--multiplier)) !important;
+  margin-bottom: calc(10 / var(--vw) * var(--multiplier)) !important;
+}
+.wizard .progress-detail.primary .progress-detail-content .content-wrapper.primary .content-progress .progress-caption .caption > span {
+  display: flex;
+  align-items: center;
+  font-size: calc(var(--font-size-h6) / var(--vw) * var(--multiplier));
+  justify-content: space-between;
+  color: var(--color-grey);
 }
 .wizard .progress-detail.primary .progress-detail-footer {
   padding-top: calc(15 / var(--vw) * var(--multiplier)) !important;
@@ -10443,7 +10473,9 @@ svg.icon-purple {
 .wizard .progress-detail.primary .progress-detail-footer .footer-caption .caption > span {
   display: flex;
   align-items: center;
+  font-size: calc(var(--font-size-p) / var(--vw) * var(--multiplier));
   justify-content: space-between;
+  color: var(--color-grey);
 }
 .wizard .quick-access-list.primary .section-wrapper.primary {
   padding: calc(25 / var(--vw) * var(--multiplier));
