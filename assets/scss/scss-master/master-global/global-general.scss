@@ -277,6 +277,22 @@ svg {
     color       : var(--color-yellow);
 }
 
+// Progress
+
+.progress {
+    @include my-2;
+
+    height                              : calc(7.5 / var(--vw) * var(--multiplier));
+
+    background                          : var(--color-grey-super-light);
+
+    border-radius                       : 50em; 
+
+    .progress-bar {
+        background                      : var(--color-black);
+    }
+}
+
 // Cursor
 
 .mf-cursor {
