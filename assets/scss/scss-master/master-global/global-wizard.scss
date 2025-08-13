@@ -348,6 +348,309 @@
                 }
             }
         }
+
+        // Secondary
+
+        &.secondary {
+
+            // Header
+
+            .achievement-list-header {
+                @include mb-4;
+
+                .header-text {
+                    .title {
+                        .text-title {
+                            @include mb-0;
+
+                            @include h5;
+
+                            > span {
+                                @include display-flex;
+
+                                @include align-items-center;
+
+                                > span {
+                                    &.icon {
+                                        @include display-inline-flex;
+                                    }
+                                }
+                            }
+
+                            svg {
+                                @include mr-2;
+
+                                width       : calc(22.5 / var(--vw) * var(--multiplier));
+                                height      : calc(22.5 / var(--vw) * var(--multiplier));
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Content
+
+            .achievement-list-content {
+                .col-content-outer {
+                    @include col-12;
+
+                    @include px-4;
+
+                    .col-content-inner {
+                        @include col-4;
+
+                        @include px-2;
+                    }
+                }
+
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        @include position-relative;
+
+                        @include display-flex;
+
+                        @include height-100;
+
+                        @include p-4;
+
+                        flex-direction          : column;
+
+                        border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                        border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+
+                        transition              : 0.5s var(--cubic-bezier-1);
+
+                        &.active {
+                            background          : rgba($color-green, 0.05);
+
+                            border              : calc(1 / var(--vw) * var(--multiplier)) solid lighten($color-green, 12.5%);
+
+                            .content-icon {
+                                .icon {
+                                    svg {
+                                        color       : darken($color-green, 7.5%);
+                                    }
+                                }
+                            }
+
+                            .content-text {
+                                .title {
+                                    .text-title {
+                                        color       : darken($color-green, 12.5%);
+                                    }
+                                }
+
+                                .subtitle {
+                                    .text-subtitle {
+                                        color       : darken($color-green, 7.5%);
+                                    }
+                                }
+                            }
+
+                            .content-point {
+                                .point {
+                                    > span {
+                                        color                           : darken($color-green, 7.5%);
+
+                                        background                      : rgba($color-green, 0.10);
+                                    
+                                        border                          : calc(1 / var(--vw) * var(--multiplier)) transparent;
+                                    }
+                                }
+                            }
+
+                            .content-info {
+                                .info-date {
+                                    .date {
+                                        > span {
+                                            color       : darken($color-green, 7.5%);
+                                        }
+                                    }
+                                }
+
+                                .info-caption {
+                                    .caption {
+                                        > span {
+                                            color       : darken($color-green, 7.5%);
+                                        }
+                                    }
+                                }
+
+                                .info-icon {
+                                    .icon {
+                                        svg {
+                                            color       : darken($color-green, 7.5%);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        > .wrapper-inner {
+                            &:first-child {
+                                @include mb-4;
+                            }
+
+                            &:last-child {
+                                @include mt-auto;
+                            }
+
+                            > .outer {
+                                @include display-flex;
+
+                                @include align-items-flex-start;
+
+                                justify-content         : space-between;
+
+                                > .inner {
+                                    @include display-flex;
+
+                                    @include align-items-center;
+
+                                    &:first-child {
+                                        @include mr-3;
+                                    }
+
+                                    &:last-child {
+                                        flex-shrink     : 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-icon {
+                            @include mr-3;
+                            
+                            .icon {
+                                svg {
+                                    width       : calc(30 / var(--vw) * var(--multiplier));
+                                    height      : calc(30 / var(--vw) * var(--multiplier));
+
+                                    color       : var(--color-grey);
+                                }
+                            }
+                        }
+
+                        .content-text {
+                            .title {
+                                .text-title {
+                                    @include mb-0;
+
+                                    @include h6;
+
+                                    color       : var(--color-grey);
+                                }
+                            }
+
+                            .subtitle {
+                                .text-subtitle {
+                                    @include small;
+                                }
+                            }
+                        }
+
+                        .content-point {
+                            .point {
+                                > span {
+                                    @include display-inline-block;
+
+                                    content                         : 'Próxima';
+
+                                    padding                         : calc(2.5 / var(--vw) * var(--multiplier)) calc(12.5 / var(--vw) * var(--multiplier));
+
+                                    font-weight                     : var(--font-weight-semibold);
+                                    font-size                       : calc(11 / var(--vw) * var(--multiplier));
+
+                                    color                           : var(--color-grey);
+
+                                    background                      : var(--color-white);
+                                    
+                                    border                          : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                    border-radius                   : 50em;
+                                }
+                            }
+                        }
+
+                        .content-info {
+                            @include display-flex;
+
+                            @include align-items-center;
+
+                            justify-content         : space-between;
+                            
+                            > div {
+                                flex-shrink         : 0; 
+                            }
+
+                            .info-date {
+                                .date {
+                                    > span {
+                                        @include small;
+
+                                        color       : var(--color-grey);
+                                    }
+                                }
+                            }
+
+                            .info-caption {
+                                .caption {
+                                    > span {
+                                        @include small;
+
+                                        color       : var(--color-grey);
+                                    }
+                                }
+                            }
+
+                            .info-icon {
+                                .icon {
+                                    svg {
+                                        color       : var(--color-grey);
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            box-shadow              : 0 10px 15px -3px rgba($color-black, 0.1), 0 4px 6px -4px rgba($color-black, 0.1);
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Content
+
+                .achievement-list-content {
+                    .col-content-outer {
+                        .col-content-inner {
+                            @include col-6;
+
+                            @include mb-4;
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .achievement-list-content {
+                    .col-content-outer {
+                        .col-content-inner {
+                            @include col-12;
+
+                            @include mb-3;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     // Activity List
@@ -807,6 +1110,169 @@
                                             background                      : rgba($color-grey-light, 0.5);
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Level Progress
+
+    .level-progress {
+
+        // Primary
+
+        &.primary {
+
+            // Content
+
+            .level-progress-content {
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        @include position-relative;
+
+                        @include display-flex;
+                        
+                        @include align-items-center;
+
+                        @include p-4;
+
+                        justify-content         : space-between;
+
+                        background              : rgba($color-purple, 0.05);
+
+                        border                  : calc(1 / var(--vw) * var(--multiplier)) solid lighten($color-purple, 12.5%);
+                        border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+
+                        transition              : 0.5s var(--cubic-bezier-1);
+
+                        > .wrapper-inner {
+                            > .outer {
+                                @include display-flex;
+
+                                @include align-items-center;
+                            }
+                        }
+
+                        .content-icon {
+                            @include mr-3;
+                            
+                            .icon {
+                                @include display-inline-flex;
+
+                                @include align-items-center;
+
+                                justify-content                 : center;
+
+                                width                           : calc(45 / var(--vw) * var(--multiplier));
+                                height                          : calc(45 / var(--vw) * var(--multiplier));
+
+                                background                      : rgba($color-purple, 0.10);
+
+                                border-radius                   : 100%;
+
+                                svg {
+                                    width                       : calc(20 / var(--vw) * var(--multiplier));
+                                    height                      : calc(20 / var(--vw) * var(--multiplier));
+
+                                    color                       : var(--color-purple);
+                                }
+                            }
+                        }
+
+                        .content-text {
+                            .title {
+                                .text-title {
+                                    @include mb-0;
+
+                                    @include h4;
+
+                                    color       : var(--color-black);
+                                }
+                            }
+
+                            .subtitle {
+                                .text-subtitle {
+                                    color       : var(--color-black);
+                                }
+                            }
+                        }
+
+                        .content-progress {
+                            @include text-align-right;
+
+                            .progress-caption {
+                                @include mb-minus-1;
+
+                                .caption {
+                                    > span {
+                                        @include small;
+
+                                        justify-content             : space-between;
+
+                                        color                       : var(--color-black);
+                                    }
+                                } 
+                            }
+
+                            .progress {
+                                @include my-2;
+
+                                width                               : calc(125 / var(--vw) * var(--multiplier));
+                                height                              : calc(7.5 / var(--vw) * var(--multiplier));
+
+                                background                          : var(--color-grey-super-light);
+
+                                border-radius                       : 50em; 
+
+                                .progress-bar {
+                                    background                      : var(--color-black);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .level-progress-content {
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            @include display-block;
+
+                            @include p-3;
+
+                            > .wrapper-inner {
+                                &:first-child {
+                                    @include mb-2;
+                                }
+                            }
+
+                            .content-text {
+                                .title {
+                                    .text-title {
+                                        @include h5;
+                                    }
+                                }
+                            }
+
+                            .content-progress {
+                                @include text-align-left;
+
+                                .progress {
+                                    @include width-100;
                                 }
                             }
                         }
@@ -1335,77 +1801,19 @@
                 }
             }
 
-            @include media-breakpoint-down(md) {
-
-                // Content
-
-                .statistic-list-content {
-                    .content-wrapper {
-
-                        // Primary
-
-                        &.primary {
-                            .content-value {
-                                .value {
-                                    > span {
-                                        @include h5;
-                                    }
-                                }
-                            }
-
-                            .content-icon {
-                                .icon {
-                                    svg {
-                                        width           : calc(30 / var(--vw) * var(--multiplier));
-                                        height          : calc(30 / var(--vw) * var(--multiplier));
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }     
-            }
-
             @include media-breakpoint-down(sm) {
 
                 // Content
 
                 .statistic-list-content {
                     .col-content-outer {
-                        padding             : 0 calc(22.5 / var(--vw) * var(--multiplier)) !important;
-
                         .col-content-inner {
-                            @include col-6;
+                            @include col-12;
 
-                            @include px-1;
-                            @include mb-2;
+                            @include mb-3;
                         }
                     }
-
-                    .content-wrapper {
-
-                        // Primary
-
-                        &.primary {
-                            .content-value {
-                                .value {
-                                    > span {
-                                        @include h5;
-                                    }
-                                }
-                            }
-
-                            .content-icon {
-                                .icon {
-                                    svg {
-                                        width           : calc(30 / var(--vw) * var(--multiplier));
-                                        height          : calc(30 / var(--vw) * var(--multiplier));
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }     
+                }
             }
         }
     }
