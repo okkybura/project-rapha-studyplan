@@ -12,7 +12,7 @@
 
     // General
 
-    --vw                                                        : 1550;
+    --vw                                                        : 1450;
     --multiplier                                                : 100vw;
 
     // Color
@@ -64,7 +64,7 @@
 
     // Font - Weight
 
-    --font-weight-title                                         : 700;
+    --font-weight-title                                         : 600;
     --font-weight-subtitle                                      : 400;
     --font-weight-description                                   : 400;
     --font-weight-date                                          : 400;
@@ -236,6 +236,40 @@ a, button {
 svg {
     width                       : calc(16.5 / var(--vw) * var(--multiplier));
     height                      : calc(16.5 / var(--vw) * var(--multiplier));
+}
+
+// Color
+
+.color-blue {
+    color       : var(--color-blue);
+}
+
+.color-brown {
+    color       : var(--color-brown);
+}
+
+.color-green {
+    color       : var(--color-green);
+}
+
+.color-indigo {
+    color       : var(--color-indigo);
+}
+
+.color-orange {
+    color       : var(--color-orange);
+}
+
+.color-purple {
+    color       : var(--color-purple);
+}
+
+.color-red {
+    color       : var(--color-red);
+}
+
+.color-white {
+    color       : var(--color-white);
 }
 
 // Cursor
@@ -582,6 +616,8 @@ svg {
 
     @include display-inline-block;
 
+    @include width-auto;
+
     @include p-0;
 
     font-family                 : var(--font-family-button);
@@ -617,8 +653,6 @@ svg {
 
                 @include align-items-center;
 
-                @include ml-2;
-
                 justify-content         : center;
 
                 > span {
@@ -642,6 +676,8 @@ svg {
                 @include display-block;
 
                 @include overflow-hidden;
+
+                @include mx-2;
 
                 > span {
                     @include display-block;      
@@ -746,13 +782,6 @@ svg {
                     border-radius       : 50em;
                 }
             }
-
-            > span {
-                &.icon {
-                    @include ml-0;
-                    @include mr-2;
-                }
-            }
         }
 
         &:hover {
@@ -815,14 +844,24 @@ svg {
     // Transparent
 
     &.btn-transparent {
+        color                   : var(--color-grey);
+
         > span {
             &.wrapper {
                 @include py-2;
                 @include px-3;
             }
+
+            > span {
+                &.text {
+                    @include mx-2;
+                }
+            }
         }
 
         &:hover {
+            color               : var(--color-black);
+
             > span {
                 &.wrapper {
                     background                      : var(--color-grey-super-light); 
@@ -1024,42 +1063,6 @@ svg {
                 }
             }
         }
-    }
-}
-
-// Icon
-
-svg {
-    &.icon-blue {
-        color       : var(--color-blue);
-    }
-
-    &.icon-brown {
-        color       : var(--color-brown);
-    }
-
-    &.icon-green {
-        color       : var(--color-green);
-    }
-
-    &.icon-indigo {
-        color       : var(--color-indigo);
-    }
-
-    &.icon-orange {
-        color       : var(--color-orange);
-    }
-
-    &.icon-purple {
-        color       : var(--color-purple);
-    }
-
-    &.icon-red {
-        color       : var(--color-red);
-    }
-
-    &.icon-white {
-        color       : var(--color-white);
     }
 }
 

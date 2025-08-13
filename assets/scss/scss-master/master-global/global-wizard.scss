@@ -220,8 +220,6 @@
                     .title {
                         .text-title {
                             @include mb-0;
-
-                            font-weight     : var(--font-weight-semibold);
                         }
                     }
                 }
@@ -388,8 +386,6 @@
                     .title {
                         .text-title {
                             @include mb-0;
-
-                            font-weight     : var(--font-weight-semibold);
                         }
                     }
                 }
@@ -656,7 +652,19 @@
                                         @include p-2;
 
                                         &.special {
+                                            @include display-block;
+
                                             @include p-3;
+
+                                            > .wrapper-inner {
+                                                &:last-child {
+                                                    @include display-block;
+
+                                                    @include width-100;
+
+                                                    @include mt-3;
+                                                }
+                                            }
 
                                             .list-icon {
                                                 .icon {
@@ -824,12 +832,18 @@
             // Header
 
             .page-title-header {
+                .header-button {
+                    @include mb-3;
+                }
+
                 .header-text {
                     .title {
                         .text-title {
                             @include mb-0;
 
                             @include h3;
+
+                            font-weight     : var(--font-weight-bold);
                         }
                     }
                 }
@@ -878,8 +892,6 @@
                     .title {
                         .text-title {
                             @include mb-0;
-
-                            font-weight     : var(--font-weight-semibold);
                         }
                     }
                 }
@@ -1006,8 +1018,6 @@
                     .title {
                         .text-title {
                             @include mb-0;
-
-                            font-weight     : var(--font-weight-semibold);
 
                             svg {
                                 @include mr-1;
@@ -1194,6 +1204,130 @@
                                 svg {
                                     width           : calc(35 / var(--vw) * var(--multiplier));
                                     height          : calc(35 / var(--vw) * var(--multiplier));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Content
+
+                .statistic-list-content {
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            .content-value {
+                                .value {
+                                    > span {
+                                        @include h5;
+                                    }
+                                }
+                            }
+
+                            .content-icon {
+                                .icon {
+                                    svg {
+                                        width           : calc(30 / var(--vw) * var(--multiplier));
+                                        height          : calc(30 / var(--vw) * var(--multiplier));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }     
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .statistic-list-content {
+                    .col-content-outer {
+                        padding             : 0 calc(22.5 / var(--vw) * var(--multiplier)) !important;
+
+                        .col-content-inner {
+                            @include col-6;
+
+                            @include px-1;
+                            @include mb-2;
+                        }
+                    }
+
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            .content-value {
+                                .value {
+                                    > span {
+                                        @include h5;
+                                    }
+                                }
+                            }
+
+                            .content-icon {
+                                .icon {
+                                    svg {
+                                        width           : calc(30 / var(--vw) * var(--multiplier));
+                                        height          : calc(30 / var(--vw) * var(--multiplier));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }     
+            }
+        }
+
+        // Secondary
+
+        &.secondary {
+
+            // Content
+
+            .statistic-list-content {
+                .col-content-outer {
+                    @include col-12;
+                    
+                    @include px-4;
+
+                    .col-content-inner {
+                        @include col-4;
+
+                        @include px-2;
+                    }
+                }
+
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        @include position-relative;
+
+                        @include text-align-center;
+
+                        @include p-3;
+
+                        justify-content         : space-between;
+
+                        border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                        border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+
+                        transition              : 0.5s var(--cubic-bezier-1);
+
+                        .content-value {
+                            .value {
+                                > span {
+                                    @include h4;
+                                    
+                                    font-weight     : var(--font-weight-bold);
                                 }
                             }
                         }
