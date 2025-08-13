@@ -91,7 +91,7 @@
     // Font - Size
 
     --font-size-general                                         : 16;
-    --font-size-title                                           : 30;
+    --font-size-title                                           : 24;
     --font-size-subtitle                                        : 15;
     --font-size-description                                     : 18;
     --font-size-date                                            : 16;
@@ -303,7 +303,6 @@ svg {
 
 .container {
     @include py-3;
-    @include px-1;
 
     max-width                   : calc(1260 / var(--vw) * var(--multiplier));
 }
@@ -622,8 +621,6 @@ svg {
 
                 justify-content         : center;
 
-                width                   : 1.65rem;
-
                 > span {
                     @include position-relative;
 
@@ -737,6 +734,25 @@ svg {
 
                 transform               : scale(1);
             }
+
+            &.wrapper {
+                @include display-flex;
+
+                @include align-items-center;
+
+                padding                 : calc(11.5 / var(--vw) * var(--multiplier)) calc(27.5 / var(--vw) * var(--multiplier));
+
+                &:before {
+                    border-radius       : 50em;
+                }
+            }
+
+            > span {
+                &.icon {
+                    @include ml-0;
+                    @include mr-2;
+                }
+            }
         }
 
         &:hover {
@@ -749,21 +765,27 @@ svg {
 
         // Primary
 
-        &.btn-primary {
-            color                       : var(--color-black);
+        &.primary {
+            color                       : var(--color-white);
 
             > span {
                 &:before {
                     background          : var(--color-primary);
+                }
+            }
 
-                    box-shadow          : 0 0 0 calc(2 / var(--vw) * var(--multiplier)) var(--color-black) inset;
+            &:hover {
+                > span {
+                    &:before {
+                        background      : darken($color-primary, 10%);
+                    }
                 }
             }
         }
 
         // Secondary
 
-        &.btn-secondary {
+        &.secondary {
             color                       : var(--color-black);
 
             > span {
@@ -777,7 +799,7 @@ svg {
 
         // Quarter
 
-        &.btn-light {
+        &.light {
             color               : var(--color-black);
 
             > span {
@@ -1005,6 +1027,42 @@ svg {
     }
 }
 
+// Icon
+
+svg {
+    &.icon-blue {
+        color       : var(--color-blue);
+    }
+
+    &.icon-brown {
+        color       : var(--color-brown);
+    }
+
+    &.icon-green {
+        color       : var(--color-green);
+    }
+
+    &.icon-indigo {
+        color       : var(--color-indigo);
+    }
+
+    &.icon-orange {
+        color       : var(--color-orange);
+    }
+
+    &.icon-purple {
+        color       : var(--color-purple);
+    }
+
+    &.icon-red {
+        color       : var(--color-red);
+    }
+
+    &.icon-white {
+        color       : var(--color-white);
+    }
+}
+
 @include media-breakpoint-down(lg) {
 
     // Grid
@@ -1017,7 +1075,7 @@ svg {
 
     .title {
         .text-title {
-            font-size           : calc(40 / var(--vw) * var(--multiplier));
+            font-size           : calc(25 / var(--vw) * var(--multiplier));
         }
     }
 }
@@ -1027,26 +1085,14 @@ svg {
     // Grid
 
     .container {
-        @include py-4;
+        @include py-3;
     }
 
     // Text
 
     .title {
         .text-title {
-            font-size           : calc(60 / var(--vw) * var(--multiplier));
-
-            &.text-title-special {
-                span {
-                    &.text {
-                        > span {
-                            &.char {
-                                margin          : 0 calc(0.5 / var(--vw) * var(--multiplier));
-                            }
-                        }
-                    }
-                }
-            }
+            @include h5;
         }
     }
 
@@ -1061,89 +1107,16 @@ svg {
     // Link
 
     .link-default {
-        font-size           : calc(14 / var(--vw) * var(--multiplier));
+        font-size                   : calc(14 / var(--vw) * var(--multiplier));
     }
 }
 
 @include media-breakpoint-down(sm) {
 
-    // Text
+    // Grid
 
-    .title {
-        &.title-wrapper-special {
-            padding             : calc(10 / var(--vw) * var(--multiplier)) calc(15 / var(--vw) * var(--multiplier));
-
-            &:before {
-                height          : calc(15 / var(--vw) * var(--multiplier));
-
-                top             : calc(-15 / var(--vw) * var(--multiplier));;
-            }
-        }
-
-        .text-title {
-            font-size           : calc(40 / var(--vw) * var(--multiplier));
-
-            &.text-title-special {
-                span {
-                    &.text {
-                        @include mx-0;
-
-                        > span {
-                            &.char {
-                                margin          : 0 calc(1.25 / var(--vw) * var(--multiplier));
-
-                                > span {
-                                    &.overlap {     
-                                        -webkit-text-stroke-width       : calc(1.25 / var(--vw) * var(--multiplier));
-
-                                        transform                       : translate(calc(4 / var(--vw) * var(--multiplier)), calc(-1 / var(--vw) * var(--multiplier)));
-                                    }
-                    
-                                    &.extrude {
-                                        -webkit-text-stroke-width       : calc(1.25 / var(--vw) * var(--multiplier));
-                    
-                                        @for $i from 1 through 15 {
-                    
-                                            > span:nth-child(#{$i}n) {
-                                                transform               : translate(calc(#{$i} * 0.20 / var(--vw) * var(--multiplier)), calc(-#{$i} * 0.20 / var(--vw) * var(--multiplier)));
-                                            }
-                                        }    
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .subtitle {
-        .text-subtitle {                
-            font-size           : calc(18 / var(--vw) * var(--multiplier));
-        }
-    }
-
-    .desc {
-        .text-description {                   
-            font-size           : calc(16 / var(--vw) * var(--multiplier));
-        }
-    }
-
-    // Tag
-
-    .tag {
-        > span {
-            width                   : calc(65 / var(--vw) * var(--multiplier));
-            height                  : calc(65 / var(--vw) * var(--multiplier));
-
-            font-size               : calc(11 / var(--vw) * var(--multiplier));
-
-            &:before {
-                width               : calc(55 / var(--vw) * var(--multiplier));
-                height              : calc(55 / var(--vw) * var(--multiplier));
-            }
-        }
+    .container {
+        @include py-2;
     }
 
     // Price
@@ -1155,14 +1128,6 @@ svg {
 
         .sellprice {
             font-size               : calc(45 / var(--vw) * var(--multiplier));
-        }
-    }
-
-    // Button
-
-    .btn-default {
-        > span {
-            padding                 : calc(17.5 / var(--vw) * var(--multiplier)) calc(40 / var(--vw) * var(--multiplier));
         }
     }
 }

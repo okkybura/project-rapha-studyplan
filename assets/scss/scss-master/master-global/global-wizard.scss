@@ -123,39 +123,27 @@
                     }
                 }
             }
+
+            @include media-breakpoint-down(md) {
+
+                .page-wrapper {
+
+                    // Primary
+                    
+                    &.primary {
+                        .col-page-outer {
+                            @include px-3;
+
+                            .col-page-inner {
+                                @include col-12;
+
+                                @include px-3;
+                            }
+                        }
+                    }
+                }
+            }
         }
-    }
-}
-
-// Icon
-
-svg {
-    &.icon-blue {
-        color       : var(--color-blue);
-    }
-
-    &.icon-brown {
-        color       : var(--color-brown);
-    }
-
-    &.icon-green {
-        color       : var(--color-green);
-    }
-
-    &.icon-indigo {
-        color       : var(--color-indigo);
-    }
-
-    &.icon-orange {
-        color       : var(--color-orange);
-    }
-
-    &.icon-purple {
-        color       : var(--color-purple);
-    }
-
-    &.icon-red {
-        color       : var(--color-red);
     }
 }
 
@@ -168,6 +156,30 @@ svg {
         @include position-relative;
 
         z-index                 : 10;
+
+        .section-wrapper {
+
+            // Primary
+
+            &.primary {
+                padding                 : calc(25 / var(--vw) * var(--multiplier));
+                
+                border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                border-radius           : calc(10 / var(--vw) * var(--multiplier));
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+
+            .section-wrapper {
+
+                // Primary
+
+                &.primary {
+                    @include p-4;
+                }
+            }
+        }
     }
 
     // ----- Main ----- //
@@ -179,17 +191,6 @@ svg {
         // Primary
 
         &.primary {
-            .section-wrapper {
-
-                // Primary
-
-                &.primary {
-                    padding                 : calc(25 / var(--vw) * var(--multiplier));
-                    
-                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
-                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
-                }
-            }
 
             // Header
 
@@ -219,8 +220,6 @@ svg {
                     .title {
                         .text-title {
                             @include mb-0;
-
-                            @include h4;
 
                             font-weight     : var(--font-weight-semibold);
                         }
@@ -261,6 +260,7 @@ svg {
                                     
                                     > .wrapper-inner {
                                         &:last-child {
+                                            @include pl-2;
                                             @include ml-auto;
 
                                             flex-shrink     : 0;
@@ -327,6 +327,28 @@ svg {
                     }
                 }
             }
+
+            @include media-breakpoint-down(sm) {
+
+                // Header
+
+                .achievement-list-header {
+                    @include text-align-center;
+
+                    .header-wrapper {
+
+                        // Primary
+                        
+                        &.primary {
+                            @include display-block;
+                        }
+                    }
+
+                    .header-text {
+                        @include mb-2;
+                    }
+                }
+            }
         }
     }
 
@@ -337,17 +359,6 @@ svg {
         // Primary
 
         &.primary {
-            .section-wrapper {
-
-                // Primary
-
-                &.primary {
-                    padding                 : calc(25 / var(--vw) * var(--multiplier));
-                    
-                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
-                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
-                }
-            }
 
             // Header
 
@@ -378,8 +389,6 @@ svg {
                         .text-title {
                             @include mb-0;
 
-                            @include h4;
-
                             font-weight     : var(--font-weight-semibold);
                         }
                     }
@@ -407,6 +416,8 @@ svg {
                                 // Primary
 
                                 &.primary {
+                                    @include position-relative;
+
                                     @include display-flex;
 
                                     @include align-items-center;
@@ -425,6 +436,32 @@ svg {
                                         background                          : rgba($color-primary, 0.05); 
 
                                         border                              : calc(2 / var(--vw) * var(--multiplier)) solid rgba($color-primary, 0.25);
+
+                                        box-shadow                          : 0 4px 6px -1px rgba($color-black, 0.1), 0 2px 4px -2px rgb($color-black, 0.1);
+
+                                        &:before {
+                                            @include position-absolute;
+
+                                            @include display-inline-block;
+
+                                            @include py-1;
+                                            @include px-2;
+
+                                            @include small;
+
+                                            content                         : 'Próxima';
+
+                                            top                             : calc(-10 / var(--vw) * var(--multiplier));
+                                            left                            : calc(-10 / var(--vw) * var(--multiplier));
+
+                                            font-weight                     : var(--font-weight-semibold);
+
+                                            color                           : var(--color-white);
+
+                                            background                      : var(--color-primary);
+
+                                            border-radius                   : 50em;
+                                        }
 
                                         .list-icon {
                                             .icon {
@@ -476,6 +513,7 @@ svg {
 
                                             @include align-items-center;
 
+                                            @include pl-2;
                                             @include ml-auto;
 
                                             flex-shrink     : 0;
@@ -572,6 +610,201 @@ svg {
                     }
                 }
             }
+
+            @include media-breakpoint-down(sm) {
+
+                // Header
+
+                .activity-list-header {
+                    @include text-align-center;
+
+                    .header-wrapper {
+
+                        // Primary
+                        
+                        &.primary {
+                            @include display-block;
+                        }
+                    }
+
+                    .header-text {
+                        @include mb-2;
+                    }
+                }
+
+                // Content
+
+                .activity-list-content {
+                    .content-list {
+                        > ul {
+                            @include pl-0;
+
+                            list-style                          : none;
+
+                            > li {
+                                @include mb-3;
+
+                                &:last-child {
+                                    @include mb-0;
+                                }
+
+                                .list-wrapper {
+
+                                    // Primary
+
+                                    &.primary {
+                                        @include p-2;
+
+                                        &.special {
+                                            @include p-3;
+
+                                            .list-icon {
+                                                .icon {
+                                                    width                       : calc(40 / var(--vw) * var(--multiplier));
+                                                    height                      : calc(40 / var(--vw) * var(--multiplier));
+
+                                                    background                  : var(--color-white);
+
+                                                    border-radius               : 100%;
+                                                    
+                                                    box-shadow                  : 0 1px 2px 0 rgb($color-black, 0.10);
+                                                }
+                                            }
+
+                                            .list-text {
+                                                .title {
+                                                    .text-title {
+                                                        @include h5;
+
+                                                        font-weight             : var(--font-weight-bold);
+                                                    }
+                                                }
+
+                                                .subtitle {
+                                                    .text-subtitle {
+                                                        @include h6;
+
+                                                        color                   : var(--color-black);
+                                                    }
+                                                }
+                                            }
+
+                                            .list-tag {
+                                                .tag {
+                                                    > span {
+                                                        background              : var(--color-white);
+                                                    }
+                                                }
+                                            }
+
+                                            &:hover {
+                                                background                      : rgba($color-primary, 0.1); 
+                                            }
+                                        }
+                                        
+                                        > .wrapper-inner {
+                                            &:last-child {
+                                                @include display-flex;
+
+                                                @include align-items-center;
+
+                                                @include ml-auto;
+
+                                                flex-shrink     : 0;
+                                            }
+
+                                            > .outer {
+                                                @include display-flex;
+
+                                                @include align-items-center;
+                                            }
+                                        }
+
+                                        .list-icon {
+                                            @include mr-3;
+
+                                            .icon {
+                                                @include display-inline-flex;
+
+                                                @include align-items-center;
+
+                                                justify-content             : center;
+                                            }
+                                        }
+
+                                        .list-text {
+                                            @include mb-1;
+
+                                            .title {
+                                                .text-title {
+                                                    @include mb-0;
+
+                                                    @include h6;
+
+                                                    font-weight             : var(--font-weight-medium);
+                                                }
+                                            }
+
+                                            .subtitle {
+                                                .text-subtitle {
+                                                    @include mb-0;
+                                                    
+                                                    @include p;
+                                                }
+                                            }
+                                        }
+
+                                        .list-caption {
+                                            .caption {
+                                                > span {
+                                                    @include p;
+
+                                                    color                   : var(--color-grey);
+                                                }
+                                            }
+                                        }
+
+                                        .list-tag {
+                                            @include display-flex;
+
+                                            @include align-items-center;
+
+                                            .tag {
+                                                @include mr-1;
+
+                                                &:last-child {
+                                                    @include mr-0;
+                                                }
+
+                                                > span {
+                                                    @include display-inline-block;
+
+                                                    @include px-2;
+
+                                                    @include small;
+
+                                                    font-weight             : var(--font-weight-semibold);
+
+                                                    line-height             : 1.85;
+
+                                                    color                   : var(--color-black);
+
+                                                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                                    border-radius           : 50em;
+                                                }
+                                            }
+                                        }
+
+                                        &:hover {
+                                            background                      : rgba($color-grey-light, 0.5);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -595,8 +828,34 @@ svg {
                     .title {
                         .text-title {
                             @include mb-0;
+
+                            @include h3;
                         }
                     }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Header
+
+                .page-title-header {
+                    .header-text {
+                        .title {
+                            .text-title {
+                                @include h4;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Header
+
+                .page-title-header {
+                    @include text-align-center;
                 }
             }
         }
@@ -609,17 +868,6 @@ svg {
         // Primary
 
         &.primary {
-            .section-wrapper {
-
-                // Primary
-
-                &.primary {
-                    padding                 : calc(25 / var(--vw) * var(--multiplier));
-                    
-                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
-                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
-                }
-            }
 
             // Header
 
@@ -630,8 +878,6 @@ svg {
                     .title {
                         .text-title {
                             @include mb-0;
-
-                            @include h4;
 
                             font-weight     : var(--font-weight-semibold);
                         }
@@ -750,17 +996,6 @@ svg {
         // Primary
 
         &.primary {
-            .section-wrapper {
-
-                // Primary
-
-                &.primary {
-                    padding                 : calc(25 / var(--vw) * var(--multiplier));
-                    
-                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
-                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
-                }
-            }
 
             // Header
 
@@ -771,8 +1006,6 @@ svg {
                     .title {
                         .text-title {
                             @include mb-0;
-
-                            @include h4;
 
                             font-weight     : var(--font-weight-semibold);
 
@@ -853,6 +1086,31 @@ svg {
 
                         &:hover {
                             background              : var(--color-grey-super-light);
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Header
+
+                .quick-access-list-header {
+                    @include mb-4;
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .quick-access-list-content {
+                    .col-content-outer {
+                        .col-content-inner {
+                            @include col-6;
+
+                            @include px-1;
+                            @include mb-2;
                         }
                     }
                 }
@@ -941,6 +1199,79 @@ svg {
                         }
                     }
                 }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Content
+
+                .statistic-list-content {
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            .content-value {
+                                .value {
+                                    > span {
+                                        @include h5;
+                                    }
+                                }
+                            }
+
+                            .content-icon {
+                                .icon {
+                                    svg {
+                                        width           : calc(30 / var(--vw) * var(--multiplier));
+                                        height          : calc(30 / var(--vw) * var(--multiplier));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }     
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .statistic-list-content {
+                    .col-content-outer {
+                        padding             : 0 calc(22.5 / var(--vw) * var(--multiplier)) !important;
+
+                        .col-content-inner {
+                            @include col-6;
+
+                            @include px-1;
+                            @include mb-2;
+                        }
+                    }
+
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            .content-value {
+                                .value {
+                                    > span {
+                                        @include h5;
+                                    }
+                                }
+                            }
+
+                            .content-icon {
+                                .icon {
+                                    svg {
+                                        width           : calc(30 / var(--vw) * var(--multiplier));
+                                        height          : calc(30 / var(--vw) * var(--multiplier));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }     
             }
         }
     }
