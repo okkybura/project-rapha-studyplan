@@ -1638,9 +1638,9 @@
         }
     }
 
-    // Progress Weekly
+    // Progress List
 
-    .progress-weekly {
+    .progress-list {
 
         // Primary
 
@@ -1648,7 +1648,7 @@
 
             // Header
 
-            .progress-weekly-header {
+            .progress-list-header {
                 @include mb-4;
 
                 .header-text {
@@ -1669,7 +1669,7 @@
 
             // Content
 
-            .progress-weekly-content {
+            .progress-list-content {
                 .content-wrapper {
 
                     // Primary
@@ -2154,6 +2154,130 @@
 
                         &.primary {
                             @include p-3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Tip List
+
+    .tip-list {
+
+        // Primary
+
+        &.primary {
+
+            // Header
+
+            .tip-list-header {
+                @include mb-4;
+
+                .header-text {
+                    .title {
+                        .text-title {
+                            @include mb-0;
+                        }
+                    }
+                }
+            }
+
+            // Content
+
+            .tip-list-content {
+                .col-content-outer {
+                    @include col-12;
+
+                    .col-content-inner {
+                        @include col-6;
+                    }
+                }
+
+                .content-wrapper {
+                    padding             : calc(20 / var(--vw) * var(--multiplier)) calc(25 / var(--vw) * var(--multiplier));
+
+                    border-radius       : calc(10 / var(--vw) * var(--multiplier));
+
+                    // Primary
+
+                    &.primary {
+                        background                  : rgba($color-green, 0.075);
+
+                        border-left                 : calc(6 / var(--vw) * var(--multiplier)) solid var(--color-green);
+
+                        .content-text {
+                            .title {
+                                .text-title {
+                                    color           : darken($color-green, 10%);
+                                }
+                            }
+                        }
+
+                        .content-list {
+                            > ul {
+                                > li {
+                                    color           : darken($color-green, 12.5%);
+                                }
+                            }
+                        }
+                    }
+
+                    // Secondary
+
+                    &.secondary {
+                        background                  : rgba($color-yellow, 0.075);
+
+                        border-left                 : calc(6 / var(--vw) * var(--multiplier)) solid var(--color-yellow);
+
+                        .content-text {
+                            .title {
+                                .text-title {
+                                    color           : darken($color-yellow, 10%);
+                                }
+                            }
+                        }
+
+                        .content-list {
+                            > ul {
+                                > li {
+                                    color           : darken($color-yellow, 12.5%);
+                                }
+                            }
+                        }
+                    }
+
+                    .content-text {
+                        .title {
+                            .text-title {
+                                @include h6;
+                            }
+                        }
+                    }
+
+                    .content-list {
+                        > ul {
+                            @include pl-4;
+                            @include mb-0;
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .tip-list-content {
+                    .col-content-outer {
+                        .col-content-inner {
+                            @include col-12;
+
+                            @include mb-3;
+                            
+                            &:last-child {
+                                @include mb-0;
+                            }
                         }
                     }
                 }
