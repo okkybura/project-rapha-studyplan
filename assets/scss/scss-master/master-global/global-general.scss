@@ -359,7 +359,7 @@ svg {
 .container {
     @include py-3;
 
-    max-width                   : calc(1350 / var(--vw) * var(--multiplier));
+    max-width                   : calc(1300 / var(--vw) * var(--multiplier));
 }
 
 .row {
@@ -372,8 +372,10 @@ svg {
     label {
         @include position-relative;
 
+        @include mb-2;
+
         font-family             : var(--font-family-general);
-        font-weight             : var(--font-weight-semibold);
+        font-weight             : var(--font-weight-regular);
         font-size               : calc(14 / var(--vw) * var(--multiplier));
 
         line-height             : 1.25;

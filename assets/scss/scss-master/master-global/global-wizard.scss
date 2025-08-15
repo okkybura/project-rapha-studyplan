@@ -204,6 +204,48 @@
                 }
             }
         }
+
+        // Page Timer
+
+        &.page-timer {
+            .page-wrapper {
+
+                // Primary
+                
+                &.primary {
+                    .col-page-outer {
+                        @include col-12;
+
+                        @include px-4;
+
+                        .col-page-inner {
+                            @include px-2;
+                            @include mb-4;
+
+                            &:nth-child(1) {
+                                @include col-8;
+                            }
+
+                            &:nth-child(2) {
+                                @include col-4;
+                            }
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+
+                            > section {
+                                @include mb-4;
+
+                                &:last-child {
+                                    @include mb-0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -2160,6 +2202,255 @@
 
                             @include px-1;
                             @include mb-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Session Configuration
+
+    .session-configuration {
+
+        // Primary
+
+        &.primary {
+            
+            // Header
+
+            .session-configuration-header {
+                @include mb-4;
+            }
+
+            // Content
+
+            .session-configuration-content {
+                .content-form {
+                    .form-group {
+                        @include mb-0;
+
+                        .group-wrapper {
+
+                            // Primary
+
+                            &.primary {
+                                @include display-flex;
+
+                                @include align-items-center;
+
+                                > div {
+                                    @include mr-2;
+
+                                    &:last-child {
+                                        @include mr-0;
+                                    }
+                                }
+                            }
+                        }
+
+                        .form-radio {
+                            @include position-relative;
+
+                            .form-radio-input:checked ~ .form-radio-label {
+                                color                   : var(--color-white);
+
+                                background              : rgba($color-primary, 1);
+
+                                border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-primary);
+                            }
+
+                            .form-radio-input {
+                                @include position-absolute;
+
+                                @include width-100;
+                                @include height-100;
+
+                                cursor                  : pointer;
+
+                                z-index                 : 10;
+
+                                opacity                 : 0;
+
+                                top                     : 0;
+                                left                    : 0; 
+                            }
+
+                            .form-radio-label {
+                                @include display-inline-flex;
+
+                                @include align-items-center;
+
+                                @include mb-0;
+
+                                @include small;
+
+                                justify-content         : center;
+
+                                width                   : calc(45 / var(--vw) * var(--multiplier));
+                                height                  : calc(45 / var(--vw) * var(--multiplier));
+
+                                font-weight             : var(--font-weight-medium);
+
+                                color                   : var(--color-black);
+
+                                background              : rgba($color-grey-light, 0.4);
+
+                                border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+
+                                transition              : 0.5s var(--cubic-bezier-1);
+                            }
+
+                            &:hover {
+                                .form-radio-label {
+                                    background          : rgba($color-grey-light, 0.75);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Session Information
+
+    .session-information {
+
+        // Primary
+
+        &.primary {
+
+            // Header
+
+            .session-information-header {
+                @include mb-4;
+            }
+
+            // Content
+
+            .session-information-content {
+                .content-list {
+                    > ul {
+                        @include pl-0;
+
+                        list-style          : none;
+
+                        > li {
+                            @include mb-3;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+
+                            .list-wrapper {
+
+                                // Primary
+
+                                &.primary {
+                                    @include display-flex;
+
+                                    @include align-items-center;
+
+                                    @include p-3;
+
+                                    border-radius                       : calc(7.5 / var(--vw) * var(--multiplier));;
+                                    
+
+                                    // Blue
+
+                                    &.blue {
+                                        background                      : rgba($color-blue, 0.05);
+
+                                        .list-icon {
+                                            .icon {
+                                                background              : rgba($color-blue, 0.10);
+
+                                                svg {
+                                                    color               : var(--color-blue);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // Green
+
+                                    &.green {
+                                        background                      : rgba($color-green, 0.05);
+
+                                        .list-icon {
+                                            .icon {
+                                                background              : rgba($color-green, 0.10);
+
+                                                svg {
+                                                    color               : var(--color-green);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // Yellow
+
+                                    &.yellow {
+                                        background                      : rgba($color-yellow, 0.05);
+
+                                        .list-icon {
+                                            .icon {
+                                                background              : rgba($color-yellow, 0.10);
+
+                                                svg {
+                                                    color               : var(--color-yellow);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .list-icon {
+                                        @include mr-3;
+
+                                        flex-shrink                     : 0;
+
+                                        .icon {
+                                            @include display-inline-flex;
+
+                                            @include align-items-center;
+
+                                            justify-content             : center;
+
+                                            width                       : calc(40 / var(--vw) * var(--multiplier));
+                                            height                      : calc(40 / var(--vw) * var(--multiplier));
+
+                                            border-radius               : 100%;
+
+                                            svg {
+                                                width                   : calc(20 / var(--vw) * var(--multiplier));
+                                                height                  : calc(20 / var(--vw) * var(--multiplier));
+                                            }
+                                        }
+                                    }
+
+                                    .list-text {
+                                        .title {
+                                            .text-title {
+                                                @include mb-0;
+
+                                                @include h6;
+
+                                                font-weight             : var(--font-weight-medium);
+                                            }
+                                        }
+
+                                        .subtitle {
+                                            .text-subtitle {
+                                                @include mb-0;
+                                                
+                                                @include small;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
