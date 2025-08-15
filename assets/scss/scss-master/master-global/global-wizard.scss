@@ -159,10 +159,22 @@
                         @include px-4;
 
                         .col-page-inner {
-                            @include col-6;
+                            @include col-4;
 
                             @include px-2;
                             @include mb-4;
+
+                            &:nth-child(1), &:nth-child(2) {
+                                @include col-6;
+                            }
+
+                            > section {
+                                @include height-100;
+
+                                > div {
+                                    @include height-100;
+                                }
+                            }
                         }
                     }
                 }
@@ -182,6 +194,10 @@
                                 @include col-12;
 
                                 @include px-3;
+
+                                &:nth-child(1), &:nth-child(2) {
+                                    @include col-12;
+                                }
                             }
                         }
                     }
@@ -1163,6 +1179,177 @@
         }
     }
 
+    // Call To Action
+
+    .call-to-action {
+
+        // Primary
+
+        &.primary {
+
+            // Content
+
+            .call-to-action-content {
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        @include display-flex;
+
+                        @include align-items-center;
+
+                        @include text-align-center;
+
+                        justify-content         : center;
+
+                        height                  : calc(400 / var(--vw) * var(--multiplier));
+
+                        padding                 : calc(25 / var(--vw) * var(--multiplier));
+
+                        background              : var(--color-grey-super-light);
+                        
+                        border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                        border-radius           : calc(10 / var(--vw) * var(--multiplier));
+
+                        > .wrapper-inner {
+                            max-width           : 35%; 
+                        }
+
+                        .content-image {
+                            @include mb-3;
+
+                            .image {
+                                img {
+                                    max-width       : calc(70 / var(--vw) * var(--multiplier));
+                                }
+                            }
+                        }
+
+                        .content-text {
+                            @include mb-4;
+
+                            .title {
+                                .text-title {
+                                    @include h5;
+                                }
+                            }
+                        }
+
+                        .content-button {
+                            .button {
+                                .btn-default {
+                                    > span {
+                                        &.wrapper {
+                                            &:before {
+                                                border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+                                            }
+                                        }
+
+                                        > span {
+                                            &.text {
+                                                @include mr-0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Content
+
+                .call-to-action-content {
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            > .wrapper-inner {
+                                max-width           : 60%; 
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .call-to-action-content {
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            > .wrapper-inner {
+                                @include max-width-100;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Filter Option
+
+    .filter-option {
+
+        // Primary
+
+        &.primary {
+
+            // Header
+
+            .filter-option-header {
+                @include mb-4;
+
+                .header-text {
+                    .title {
+                        .text-title {
+                            @include mb-0;
+
+                            svg {
+                                @include mr-1;
+
+                                width       : calc(20 / var(--vw) * var(--multiplier));
+                                height      : calc(20 / var(--vw) * var(--multiplier));
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Content
+
+            .filter-option-content {
+                .content-form {
+                    .col-form-outer {
+                        @include col-12;
+
+                        @include px-4;
+
+                        .col-form-inner {
+                            @include col-6;
+
+                            @include px-2;
+                        }
+                    }
+
+                    .form-group {
+                        @include mb-0;
+                    }
+                }
+            }
+        }
+    }
+
     // Page Title
 
     .page-title {
@@ -1196,6 +1383,38 @@
                 }
             }
 
+            // Content
+
+            .page-title-content {
+                @include mt-4;
+                @include mb-3;
+
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        @include display-flex;
+
+                        @include align-items-center;
+
+                        justify-content         : space-between;
+                        
+                        > div {
+                            &:last-child {
+                                @include ml-auto;
+                            }
+                        }
+
+                        .content-form {
+                            .form-group {
+                                @include mb-0;
+                            }
+                        }
+                    }
+                }
+            }
+
             @include media-breakpoint-down(md) {
 
                 // Header
@@ -1217,6 +1436,30 @@
 
                 .page-title-header {
                     @include text-align-center;
+                }
+
+                // Content
+
+                .page-title-content {
+                    @include mt-4;
+                    @include mb-3;
+
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            > div ~ div:last-child {
+                                margin-right            : 0 !important;
+                            }
+
+                            > div {
+                                &:last-child {
+                                    @include mx-auto;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1714,6 +1957,87 @@
                 }
             }
         }
+
+        // Secondary
+
+        &.secondary {
+            
+            // Header
+
+            .progress-list-header {
+                @include mb-4;
+            }
+
+            // Content
+
+            .progress-list-content {
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        > .wrapper-inner {
+                            @include mb-1;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+                        }
+
+                        .content-progress {
+                            .progress-wrapper {
+
+                                // Primary
+
+                                &.primary {
+                                    @include display-flex;
+
+                                    @include align-items-center;
+
+                                    justify-content             : space-between;
+
+                                    > .wrapper-inner {
+                                        @include display-flex;
+
+                                        @include align-items-center;
+
+                                        flex-shrink             : 0;
+                                    }
+                                }
+                            }
+
+                            .progress-text {
+                                .title {
+                                    .text-title {
+                                        @include mb-0;
+
+                                        @include p;
+
+                                        font-weight             : var(--font-weight-regular);
+                                    }
+                                }
+                            }
+
+                            .progress {
+                                width                           : calc(100 / var(--vw) * var(--multiplier));
+                            }
+
+                            .progress-caption {
+                                @include ml-2;
+
+                                .caption {
+                                    > span {
+                                        @include p;
+
+                                        color                   : var(--color-grey);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     // Quick Access List
@@ -1836,6 +2160,294 @@
 
                             @include px-1;
                             @include mb-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Session List
+
+    .session-list {
+
+        // Primary
+
+        &.primary {
+
+            // Header
+
+            .session-list-header {
+                @include mb-4;
+
+                .header-text {
+                    .title {
+                        .text-title {
+                            @include mb-0;
+
+                            svg {
+                                @include mr-1;
+
+                                width       : calc(20 / var(--vw) * var(--multiplier));
+                                height      : calc(20 / var(--vw) * var(--multiplier));
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Content
+
+            .session-list-content {
+                .content-list {
+                    > ul {
+                        @include pl-0;
+
+                        list-style          : none;
+
+                        > li {
+                            @include mb-3;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+
+                            .list-wrapper {
+
+                                // Primary
+
+                                &.primary {
+                                    @include position-relative;
+
+                                    @include display-flex;
+
+                                    @include align-items-center;
+                                    
+                                    @include p-4;
+
+                                    justify-content         : space-between;
+
+                                    background              : rgba($color-grey-super-light, 0.85); 
+
+                                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                    border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+
+                                    transition              : 0.5s var(--cubic-bezier-1);
+
+                                    > .wrapper-inner {
+                                        @include display-flex;
+
+                                        @include align-items-center;
+
+                                        width                   : 50%;
+
+                                        &:last-child {
+                                            justify-content     : space-between;
+                                        }
+
+                                        > div {
+                                            @include mr-4;
+
+                                            &:last-child {
+                                                @include mr-0;
+                                            }
+                                        }
+                                    }
+
+                                    .list-time {
+                                        @include text-align-center;
+
+                                        .time-date {
+                                            @include mb-1;
+
+                                            > span {
+                                                @include display-block;
+
+                                                @include p;
+                                            }
+                                        }
+
+                                        .time-period {
+                                            > span {
+                                                @include display-inline-block;
+
+                                                @include px-2;
+
+                                                @include small;
+
+                                                font-weight         : var(--font-weight-semibold);
+
+                                                line-height         : 1.75;
+
+                                                border-radius       : 50em; 
+
+                                                &.morning {
+                                                    color               : darken($color-yellow, 25%);
+
+                                                    background          : rgba($color-yellow, 0.15);
+                                                }
+
+                                                &.afternoon {
+                                                    color               : darken($color-orange, 25%);
+
+                                                    background          : rgba($color-orange, 0.15);
+                                                }
+
+                                                &.night {
+                                                    color               : darken($color-purple, 25%);
+
+                                                    background          : rgba($color-purple, 0.15);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .list-text {
+                                        .title {
+                                            .text-title {
+                                                @include mb-0;
+
+                                                font-size               : calc(18 / var(--vw) * var(--multiplier));
+                                            }
+                                        }
+                                    }
+
+                                    .list-duration {
+                                        @include text-align-center;
+
+                                        .duration {
+                                            > span {
+                                                @include display-block;
+
+                                                > span {
+                                                    @include display-block;
+
+                                                    &:first-child {
+                                                        @include h5;
+
+                                                        font-weight             : var(--font-weight-bold);
+                                                    }
+
+                                                    &:last-child {
+                                                        @include small;
+
+                                                        color                   : var(--color-grey);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .list-status {
+                                        .status {
+                                            > span {
+                                                @include display-inline-block;
+
+                                                @include px-2;
+
+                                                @include small;
+
+                                                font-weight         : var(--font-weight-semibold);
+
+                                                line-height         : 1.75;
+
+                                                border-radius       : 50em; 
+
+                                                &.complete {
+                                                    color           : var(--color-white);
+
+                                                    background      : var(--color-black);
+                                                }
+
+                                                &.incomplete {
+                                                    background      : rgba($color-grey-light, 0.5);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:hover {
+                                        background          : rgba($color-grey-light, 0.5); 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Content
+
+                .session-list-content {
+                    .content-list {
+                        > ul {
+                            > li {
+                                .list-wrapper {
+
+                                    // Primary
+
+                                    &.primary {
+                                        @include p-3;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .session-list-content {
+                    .content-list {
+                        > ul {
+                            > li {
+                                .list-wrapper {
+
+                                    // Primary
+
+                                    &.primary {
+                                        @include display-block;
+
+                                        @include p-3;
+
+                                        > .wrapper-inner {
+                                            @include width-100;
+
+                                            @include mb-2;
+
+                                            &:first-child {
+                                                @include display-block;
+
+                                                > div {
+                                                    @include mb-2;
+                                                    @include mr-0;
+                                                    
+                                                    &:last-child {
+                                                        @include mb-0;
+                                                    }
+                                                }
+                                            }
+
+                                            &:last-child {
+                                                @include mb-0;
+                                            }
+                                        }
+
+                                        .list-time {
+                                            @include display-flex;
+
+                                            @include align-items-center;
+
+                                            justify-content             : space-between;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -2116,7 +2728,7 @@
                                 .text-subtitle {
                                     @include mb-0;
 
-                                    @include small;
+                                    @include p;
                                 }
                             }
                         }
@@ -2124,7 +2736,7 @@
                         .content-caption {
                             .caption {
                                 > span {
-                                    @include small;
+                                    @include p;
                                 }
                             }
                         }
@@ -2154,6 +2766,80 @@
 
                         &.primary {
                             @include p-3;
+
+                            .content-text {
+                                .subtitle {
+                                    .text-subtitle {
+                                        @include small;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Quarter
+
+        &.quarter {
+
+            // Header
+
+            .statistic-list-header {
+                @include mb-4;
+            }
+
+            // Content
+
+            .statistic-list-content {
+                .content-list {
+                    > ul {
+                        @include pl-0;
+                        
+                        list-style                  : none;
+
+                        > li {
+                            @include mb-3;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+
+                            .list-wrapper {
+
+                                // Primary
+
+                                &.primary {
+                                    @include display-block;
+
+                                    @include text-align-center;
+
+                                    @include p-4;
+
+                                    background                  : rgba($color-green, 0.075);
+
+                                    border-radius               : calc(2.5 / var(--vw) * var(--multiplier));
+
+                                    .list-value {
+                                        .value {
+                                            > span {
+                                                @include h3;
+                                                
+                                                font-weight     : var(--font-weight-bold);
+                                            }
+                                        }
+                                    }
+
+                                    .list-text {
+                                        .subtitle {
+                                            .text-subtitle {
+                                                @include mb-0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }

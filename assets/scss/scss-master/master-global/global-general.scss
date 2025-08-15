@@ -93,8 +93,8 @@
 
     --font-size-general                                         : 16;
     --font-size-title                                           : 24;
-    --font-size-subtitle                                        : 15;
-    --font-size-description                                     : 18;
+    --font-size-subtitle                                        : 16;
+    --font-size-description                                     : 16;
     --font-size-date                                            : 16;
     --font-size-caption                                         : 16;
     --font-size-number                                          : 42.5;
@@ -438,6 +438,8 @@ svg {
 
             @include p-2;
 
+            min-width           : calc(150 / var(--vw) * var(--multiplier));
+
             font-family         : var(--font-family-general);
             font-weight         : var(--font-weight-regular);
             font-size           : calc(15 / var(--vw) * var(--multiplier));
@@ -446,8 +448,8 @@ svg {
 
             background          : var(--color-white);
 
-            border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-black, 0.25);
-            border-radius       : calc(4.5 / var(--vw) * var(--multiplier));
+            border              : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+            border-radius       : calc(7.5 / var(--vw) * var(--multiplier));
 
             box-shadow          : none;
 
@@ -551,20 +553,7 @@ svg {
 
         line-height             : 1.65;
 
-        letter-spacing          : calc(var(--letter-spacing-description) / var(--vw) * var(--multiplier));
-
-        color                   : var(--color-black);
-
-        > b {
-            @include text-transform-uppercase;
-
-            @include text-decoration-underline;
-
-            font-family         : var(--font-family-primary);
-            font-weight         : var(--font-weight-black);
-
-            letter-spacing      : calc(0.5 / var(--vw) * var(--multiplier));
-        }
+        color                   : var(--color-grey);
     }
 }
 
@@ -857,6 +846,52 @@ svg {
                     background          : var(--color-white);
 
                     box-shadow          : 0 0 0 calc(2 / var(--vw) * var(--multiplier)) var(--color-black) inset;
+                }
+            }
+        }
+    }
+
+    // Outline
+
+    &.btn-outline {
+        > span {
+            &.wrapper {
+                @include py-2;
+                @include px-4;
+
+                &:before, &:after {
+                    @include position-absolute;
+
+                    @include width-100;
+                    @include height-100;
+
+                    content                 : '';
+
+                    top                     : 0;
+                    left                    : 0;
+
+                    transform               : scale(1);
+                }
+                
+                &:before {
+                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                    border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+                }
+            }
+
+            > span {
+                &.text {
+                    @include mr-0;
+                }
+            }
+        }
+
+        &:hover {
+            > span {
+                &.wrapper {
+                    &:before {
+                        background          : var(--color-grey-super-light);
+                    }
                 }
             }
         }
