@@ -70,7 +70,7 @@
     --font-weight-description                                   : 400;
     --font-weight-date                                          : 400;
     --font-weight-caption                                       : 900;
-    --font-weight-number                                        : 900;
+    --font-weight-number                                        : 700;
     --font-weight-tag                                           : 900;
     --font-weight-link                                          : 500;
     --font-weight-button                                        : 500;
@@ -97,7 +97,7 @@
     --font-size-description                                     : 16;
     --font-size-date                                            : 16;
     --font-size-caption                                         : 16;
-    --font-size-number                                          : 42.5;
+    --font-size-number                                          : 65;
     --font-size-tag                                             : 20;
     --font-size-link                                            : 14;
     --font-size-button                                          : 15;
@@ -665,6 +665,8 @@ svg {
 
                 @include align-items-center;
 
+                @include mr-2;
+
                 justify-content         : center;
 
                 > span {
@@ -688,8 +690,6 @@ svg {
                 @include display-block;
 
                 @include overflow-hidden;
-
-                @include mx-2;
 
                 > span {
                     @include display-block;      
@@ -791,7 +791,7 @@ svg {
                 padding                 : calc(11.5 / var(--vw) * var(--multiplier)) calc(27.5 / var(--vw) * var(--multiplier));
 
                 &:before {
-                    border-radius       : 50em;
+                    border-radius       : calc(7.5 / var(--vw) * var(--multiplier));;
                 }
             }
         }
@@ -824,21 +824,7 @@ svg {
             }
         }
 
-        // Secondary
-
-        &.secondary {
-            color                       : var(--color-black);
-
-            > span {
-                &:before {
-                    background          : var(--color-secondary);
-
-                    box-shadow          : 0 0 0 calc(2 / var(--vw) * var(--multiplier)) var(--color-black) inset;
-                }
-            }
-        }
-
-        // Quarter
+        // Light
 
         &.light {
             color               : var(--color-black);
@@ -851,6 +837,44 @@ svg {
                 }
             }
         }
+
+        // Grey
+
+        &.grey {
+            color                   : var(--color-white);
+
+            > span {
+                &:before {
+                    background          : var(--color-grey);
+                }
+            }
+
+            &:hover {
+                > span {
+                    &:before {
+                        background      : darken($color-grey, 10%);
+                    }
+                }
+            }
+        }    
+
+        // Grey Super light
+
+        &.grey-super-light {
+            > span {
+                &:before {
+                    background          : var(--color-grey-super-light);
+                }
+            }
+
+            &:hover {
+                > span {
+                    &:before {
+                        background      : rgba($color-grey, 0.075);
+                    }
+                }
+            }
+        }        
     }
 
     // Outline
@@ -1154,14 +1178,6 @@ svg {
     .title {
         .text-title {
             @include h5;
-        }
-    }
-
-    // Number
-
-    .number {
-        > span {
-            font-size               : calc(32.5 / var(--vw) * var(--multiplier));
         }
     }
 
