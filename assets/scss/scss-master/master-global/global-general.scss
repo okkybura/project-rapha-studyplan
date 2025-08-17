@@ -72,7 +72,7 @@
     --font-weight-caption                                       : 900;
     --font-weight-number                                        : 700;
     --font-weight-tag                                           : 900;
-    --font-weight-link                                          : 500;
+    --font-weight-link                                          : 400;
     --font-weight-button                                        : 500;
     --font-weight-textprice                                     : 900;
     --font-weight-sellprice                                     : 900;
@@ -99,7 +99,7 @@
     --font-size-caption                                         : 16;
     --font-size-number                                          : 65;
     --font-size-tag                                             : 20;
-    --font-size-link                                            : 14;
+    --font-size-link                                            : 15;
     --font-size-button                                          : 15;
     --font-size-icon                                            : 12;
     --font-size-textprice                                       : 20;
@@ -240,6 +240,10 @@ svg {
 }
 
 // Color
+
+.color-grey {
+    color       : var(--color-grey);
+}
 
 .color-blue {
     color       : var(--color-blue);
@@ -421,8 +425,8 @@ svg {
 
             background          : var(--color-white);
 
-            border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-black, 0.25);
-            border-radius       : calc(4.5 / var(--vw) * var(--multiplier));
+            border              : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+            border-radius       : calc(7.5 / var(--vw) * var(--multiplier));
 
             box-shadow          : none;
 
@@ -665,8 +669,6 @@ svg {
 
                 @include align-items-center;
 
-                @include mr-2;
-
                 justify-content         : center;
 
                 > span {
@@ -690,6 +692,8 @@ svg {
                 @include display-block;
 
                 @include overflow-hidden;
+
+                @include ml-2;
 
                 > span {
                     @include display-block;      
@@ -1000,100 +1004,86 @@ svg {
 
     @include display-inline-block;
 
+    @include width-auto;
+
     @include p-0;
 
     @include text-decoration-none;
 
-    font-family         : var(--font-family-link);
-    font-weight         : var(--font-weight-link);
-    font-size           : calc(var(--font-size-link) / var(--vw) * var(--multiplier));
+    font-family                 : var(--font-family-link);
+    font-weight                 : var(--font-weight-link);
+    font-size                   : calc(var(--font-size-link) / var(--vw) * var(--multiplier));
 
-    line-height         : 1.5;
+    border-radius               : calc(0 / var(--vw) * var(--multiplier));
+
+    &:before, &:after {
+        border-radius           : calc(0 / var(--vw) * var(--multiplier));
+    }
+
+    *:before, *:after {
+        border-radius           : calc(0 / var(--vw) * var(--multiplier));
+    }
 
     > span {
         &.wrapper {
-            @include position-relative;
-
-            @include overflow-hidden;
-
             @include display-flex;
 
             @include align-items-center;
 
-            padding                 : calc(1.5 / var(--vw) * var(--multiplier)) calc(5 / var(--vw) * var(--multiplier));
+            border-radius           : calc(5 / var(--vw) * var(--multiplier));
+        }
 
-            &:before, &:after {
-                @include position-absolute;
+        > span {
+            @include position-relative;
 
-                @include width-100;
-                @include height-100;
+            &.icon {
+                @include display-inline-flex;
 
-                content                 : '';
+                @include align-items-center;
 
-                bottom                  : 0;
-                left                    : 0;
+                justify-content         : center;
 
-                transform               : scaleX(0);
+                > span {
+                    @include position-relative;
 
-                background              : var(--color-black);
-            }
-
-            &:before {
-                transform-origin        : right;
-            }
-
-            &:after {
-                transition              : unset;
-
-                transform-origin        : left;
-            }
-
-            > span {
-                @include position-relative;
-
-                z-index                 : 20;
-
-                &.text {
-                    @include display-flex;
-
-                    @include align-items-center;
+                    @include display-inline-flex;
 
                     @include overflow-hidden;
 
-                    > span {
-                        @include display-block;
-
-                        @include overflow-hidden;
-
-                        z-index                 : 20;
-
-                        &:nth-child(1) {
-                            color               : rgba($color-black, 0.85);
-                        }
-
+                    > i {
                         &:nth-child(2) {
                             @include position-absolute;
 
-                            top                 : 50%;
-
-                            transform           : translateY(-50%);
-
-                            color               : rgba($color-primary, 1);
-
-                            > span {
-                                transform       : translateY(100%);
-                            }
+                            left            : -105%;
                         }
+                    }
+                }
+            }
 
-                        > span {
-                            @include display-inline-block;
+            &.text {
+                @include display-block;
 
-                            white-space                     : pre;
+                @include overflow-hidden;
 
-                            @for $i from 1 through 20 {
-                                &:nth-child(#{$i}) {
-                                    transition-delay        : #{($i - 1) * 0.005}s;
-                                }
+                @include ml-2;
+
+                > span {
+                    @include display-block;      
+                    
+                    &:nth-child(2) {
+                        @include position-absolute;
+
+                        top                         : 100%;
+                    }                  
+
+                    > span {
+                        @include display-inline-block;
+
+                        white-space                 : pre;
+
+                        @for $i from 1 through 25 {
+                            &:nth-child(#{$i}) {
+                                transition-delay    : #{($i - 1) * 0.005}s;
                             }
                         }
                     }
@@ -1103,23 +1093,24 @@ svg {
     }
 
     &:hover {
+        @include text-decoration-none;
+
         > span {
-            &.wrapper {
-                &:before, &:after {
-                    transform               : scaleX(1);
-                }
-
-                &:before {
-                    transition              : unset;
-                    transition-delay        : 0.375s;
-                }
-
-                &:after {
-                    transition-duration     : 0.75s;
-                }
-            }
-
             > span {
+                &.icon { 
+                    > span {
+                        > i {
+                            &:nth-child(1) {
+                                transform               : translateX(100%);
+                            }
+
+                            &:nth-child(2) {
+                                left                    : 0;
+                            }
+                        }
+                    }
+                }
+
                 &.text {
                     > span {
                         &:nth-child(1) {
@@ -1130,18 +1121,46 @@ svg {
 
                         &:nth-child(2) {
                             > span {
-                                transform                   : translateY(0%);
+                                transform                   : translateY(-100%);
                             }
                         }
 
                         > span {
-                            @for $i from 1 through 20 {
+                            @for $i from 1 through 25 {
                                 &:nth-child(#{$i}) {
-                                    transition-delay        : #{($i - 1) * 0.0075}s;
+                                    transition-delay        : #{($i - 1) * 0.0125}s;
                                 }
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+
+    // Transparent
+
+    &.link-transparent {
+        color                   : var(--color-black);
+
+        > span {
+            &.wrapper {
+                @include p-1;
+            }
+
+            > span {
+                &.text {
+                    @include mx-2;
+                }
+            }
+        }
+
+        &:hover {
+            color               : var(--color-black);
+
+            > span {
+                &.wrapper {
+                    background                      : var(--color-grey-super-light); 
                 }
             }
         }

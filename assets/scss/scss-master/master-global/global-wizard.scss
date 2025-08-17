@@ -1259,6 +1259,288 @@
         }
     }
 
+    // Agenda Detail
+
+    .agenda-detail {
+
+        // Primary
+
+        &.primary {
+            @include my-4;
+
+            // Content
+
+            .agenda-detail-content {
+                .col-content-outer {
+                    @include col-12;
+
+                    @include px-4;
+
+                    .col-content-inner {
+                        @include col-4;
+
+                        @include px-2;
+                        @include mb-4;
+                    }
+                }
+
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        @include p-4;
+
+                        border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                        border-radius           : calc(10 / var(--vw) * var(--multiplier));
+
+                        > .wrapper-inner {
+                            @include mb-4;
+
+                            > .outer {
+                                @include display-flex;
+
+                                @include align-items-center;
+
+                                justify-content         : space-between;
+
+                                > .inner {
+                                    &:last-child {
+                                        @include display-flex;
+
+                                        @include align-items-center;
+                                    }
+
+                                    > div {
+                                        @include mr-1;
+
+                                        &:last-child {
+                                            @include mr-0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-caption {
+                            .caption {
+                                > span {
+                                    @include display-inline-block;
+ 
+                                    @include px-3;
+
+                                    @include small;
+
+                                    font-weight             : var(--font-weight-medium);
+
+                                    line-height             : 2;
+
+                                    color                   : var(--color-black);
+
+                                    background              : rgba($color-grey-light, 0.075);
+
+                                    border-radius           : 50em;
+
+                                    &.update {
+                                        color                   : var(--color-green);
+
+                                        background              : rgba($color-green, 0.075);
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-status {
+                            .status {
+                                > span {
+                                    @include display-inline-block;
+ 
+                                    @include px-3;
+
+                                    @include small;
+
+                                    font-weight             : var(--font-weight-medium);
+
+                                    line-height             : 2;
+
+                                    color                   : var(--color-black);
+
+                                    background              : rgba($color-grey-light, 0.075);
+
+                                    border-radius           : 50em;
+
+                                    &.active {
+                                        color                   : var(--color-white);
+
+                                        background              : rgba($color-blue, 1);
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-dropdown {
+                            .dropdown {
+                                .dropdown-menu {
+                                    @include py-1;
+
+                                    width                       : calc(225 / var(--vw) * var(--multiplier));
+
+                                    > div {
+                                        @include p-1;
+                                    }
+                                    
+                                    .menu-header {
+                                        @include px-4;
+                                        
+                                        .header-text {
+                                            .title {
+                                                .text-title {
+                                                    @include mb-0;
+
+                                                    @include p;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                    .menu-content {
+                                        border-top              : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                        border-bottom           : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+
+                                        .content-link {
+                                            .link {
+                                                .link-default {
+                                                    @include display-block;
+
+                                                    @include width-100;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .menu-footer {
+                                        .footer-link {
+                                            .link {
+                                                .link-default {
+                                                    @include display-block;
+
+                                                    @include width-100;
+                                                    
+                                                    color           : var(--color-red);
+                                                }
+                                            }
+                                        }     
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-text {
+                            @include mb-3;
+
+                            .title {
+                                .text-title {
+                                    @include h5;
+                                }
+                            }
+                        }
+
+                        .content-progress {
+                            .progress-caption {
+                                .caption {
+                                    > span {
+                                        @include display-flex;
+                                        
+                                        @include align-items-center;
+
+                                        @include p;
+
+                                        justify-content             : space-between;
+
+                                        color                       : var(--color-grey);
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-button {
+                            @include display-flex;
+
+                            @include align-items-center;
+
+                            @include mt-4;
+
+                            > div {
+                                @include mr-2;
+
+                                &:last-child {
+                                    @include mr-0;
+
+                                    .btn-default {
+                                        > span {
+                                            padding                 : calc(13.5 / var(--vw) * var(--multiplier)) calc(15 / var(--vw) * var(--multiplier)) !important;
+
+                                            > span {
+                                                &.icon {
+                                                    color           : var(--color-red);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Content
+
+                .agenda-detail-content {
+                    .col-content-outer {
+                        .col-content-inner {
+                            @include col-6;
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .agenda-detail-content {
+                    .col-content-outer {
+                        .col-content-inner {
+                            @include col-12;
+                        }
+                    }
+
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            @include p-3;
+
+                            .content-button {
+                                .button {
+                                    .btn-default {
+                                        > span {
+                                            @include px-3;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     // Agenda List
 
     .agenda-list {
@@ -1313,6 +1595,8 @@
                     // Primary
 
                     &.primary {
+                        @include height-100;
+
                         @include p-4;
 
                         border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
@@ -1677,229 +1961,91 @@
                 }
             }
         }
-    }
 
-    // Highlight Subject
+        // Secondary
 
-    .highlight-subject {
+        &.secondary {
 
-        // Primary
+            // Header
 
-        &.primary {
+            .filter-option-header {
+                @include mb-4;
+
+                .header-text {
+                    .title {
+                        .text-title {
+                            @include mb-0;
+
+                            svg {
+                                @include mr-1;
+
+                                width       : calc(20 / var(--vw) * var(--multiplier));
+                                height      : calc(20 / var(--vw) * var(--multiplier));
+                            }
+                        }
+                    }
+                }
+            }
 
             // Content
 
-            .highlight-subject-content {
-                .content-wrapper {
+            .filter-option-content {
+                .content-form {
+                    .col-form-outer {
+                        @include col-12;
 
-                    // Primary
+                        @include px-4;
 
-                    &.primary {
-                        padding                 : calc(25 / var(--vw) * var(--multiplier));
-                        
-                        background              : rgba($color-blue, 0.075);
+                        .col-form-inner {
+                            @include col-12;
 
-                        border                  : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-blue, 0.35);
-                        border-radius           : calc(10 / var(--vw) * var(--multiplier));
+                            @include px-2;
 
-                        &.complete {
-                            background              : rgba($color-green, 0.075);
+                            max-width               : 17.5%;
 
-                            border                  : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-green, 0.35);              
-                        }
-
-                        > .wrapper-inner {
-                            > .outer {
-                                @include display-flex;
-
-                                @include align-items-center;
-                                
-                                > .inner {
-                                    &:first-child {
-                                        @include mr-4;
-                                    }
-
-                                    &:last-child {
-                                        flex-shrink         : 0;
-                                    }
-                                    
-                                    .col-outer {
-                                        @include col-12;
-
-                                        .col-inner {
-                                            &:nth-child(1) {
-                                                @include col-3;
-                                            }
-
-                                            &:nth-child(2) {
-                                                @include col-9;
-                                            }
-                                        }
-                                    }
-                                }
+                            &:nth-child(1) {
+                                max-width           : 65%;
                             }
                         }
+                    }
 
-                        .content-text {
-                            @include mb-4;
+                    .form-group {
+                        @include mb-0;
 
-                            .title {
-                                .text-title {
-                                    @include h4;
-                                    
-                                    > span {
-                                        > span {
-                                            &:last-child {
-                                                font-weight     : var(--font-weight-medium);
-
-                                                color           : var(--color-grey); 
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        .content-image {
-                            @include position-relative;
-
-                            .image {
-                                @include overflow-hidden;
-
-                                border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
-                            }
-
-                            .anchor {
-                                @include position-absolute;
-
-                                @include display-inline-flex;
-
-                                @include align-items-center;
-
-                                justify-content         : center;
-
-                                width                   : calc(36.5 / var(--vw) * var(--multiplier));
-                                height                  : calc(36.5 / var(--vw) * var(--multiplier));
-
-                                top                     : 50%;
-                                left                    : 50%;
-
-                                transform               : translate(-50%, -50%);
-
-                                background              : var(--color-primary);
-
-                                border-radius           : 100%;
-
-                                svg {
-                                    color               : var(--color-white);
-                                }
-                            }
-                        }
-
-                        .content-tag {
+                        .form-input {
                             @include display-flex;
 
                             @include align-items-center;
 
-                            @include mb-1;
+                            background          : var(--color-white);
 
-                            .tag {
-                                @include mr-2;
+                            padding             : calc(8.5 / var(--vw) * var(--multiplier)) calc(10 / var(--vw) * var(--multiplier));
 
-                                &:last-child {
-                                    @include mr-0;
+                            border              : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                            border-radius       : calc(7.5 / var(--vw) * var(--multiplier));
+
+                            > span {
+                                &.icon {
+                                    @include mr-2;
+                                    
+                                    svg {
+                                        color           : var(--color-grey);
+                                    }
                                 }
 
-                                > span {
-                                    @include display-inline-block;
+                                &.input {
+                                    @include display-block;
 
-                                    @include px-2;
-
-                                    @include small;
-
-                                    font-weight             : var(--font-weight-semibold);
-
-                                    line-height             : 1.85;
-
-                                    color                   : var(--color-black);
-
-                                    background              : var(--color-grey-super-light);
-
-                                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
-                                    border-radius           : 50em;
-
-                                    &.duration {
-                                        background          : var(--color-grey-super-light);
-
-                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
-                                    }
-
-                                    &.type {
-                                        color               : var(--color-blue);
-
-                                        background          : rgba($color-blue, 0.075);
-
-                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-blue, 0.25);
-                                    }
-
-                                    &.status {
-                                        color               : var(--color-green);
-                                        
-                                        background          : rgba($color-green, 0.075);
-
-                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-green, 0.25);
-                                    }
+                                    @include width-100;
                                 }
                             }
-                        }
 
-                        .content-caption {
-                            @include mb-1;
-
-                            .caption {
-                                > span {
-                                    @include p;
-
-                                    color                   : var(--color-grey);
-                                }
-                            }
-                        }
-
-                        .content-progress {
-                            @include display-flex;
-
-                            @include align-items-center;
-
-                            .progress {
+                            .form-control {
                                 @include width-100;
 
-                                @include mr-4;
-                            }
+                                @include p-0;
 
-                            .progress-caption {
-                                .caption {
-                                    > span {
-                                        @include small;
-
-                                        font-weight         : var(--font-weight-semibold);
-
-                                        color               : var(--color-grey);
-                                    }
-                                }
-                            }
-                        }
-
-                        .content-button {
-                            @include display-flex;
-
-                            @include align-items-center;
-
-                            .button {
-                                @include mr-2;
-
-                                &:last-child {
-                                    @include mr-0;
-                                }
+                                border          : unset;
                             }
                         }
                     }
@@ -1910,38 +2056,15 @@
 
                 // Content
 
-                .highlight-subject-content {
-                    .content-wrapper {
+                .filter-option-content {
+                    .content-form {
+                        .col-form-outer {
+                            .col-form-inner {
+                                max-width               : 25%;
 
-                        // Primary
-
-                        &.primary {
-                            @include p-4;
-
-                            > .wrapper-inner {
-                                > .outer {
-                                    @include display-block;
-
-                                    > .inner {
-                                        &:first-child {
-                                            @include mr-3;
-                                        }
-                                    }
+                                &:nth-child(1) {
+                                    max-width           : 50%;
                                 }
-                            }
-
-                            .content-text {
-                                .title {
-                                    .text-title {
-                                        @include h5;
-                                    }
-                                }
-                            }
-
-                            .content-button {
-                                @include mt-3;
-
-                                justify-content                 : flex-end;
                             }
                         }
                     }
@@ -1952,50 +2075,20 @@
 
                 // Content
 
-                .highlight-subject-content {
-                    .content-wrapper {
+                .filter-option-content {
+                    .content-form {
+                        .col-form-outer {
+                            .col-form-inner {
+                                @include mb-2;
 
-                        // Primary
+                                max-width               : 100%;
 
-                        &.primary {
-                            @include p-3;
-
-                            > .wrapper-inner {
-                                > .outer {
-                                    > .inner {
-                                        &:first-child {
-                                            @include mr-0;
-                                        }
-
-                                        .col-outer {
-                                            .col-inner {
-                                                &:nth-child(1) {
-                                                    @include col-12;
-
-                                                    @include mb-4;
-                                                }
-
-                                                &:nth-child(2) {
-                                                    @include col-12;
-                                                }
-                                            }
-                                        }
-                                    }
+                                &:nth-child(1) {
+                                    max-width           : 100%;
                                 }
-                            }
 
-                            .content-button {
-                                @include display-block;
-
-                                .button {
-                                    @include mb-2;
-                                    @include mr-0;
-                                    
-                                    .btn-default {
-                                        @include display-block;
-
-                                        @include width-100;
-                                    }
+                                &:last-child {
+                                    @include mb-0;
                                 }
                             }
                         }
@@ -2070,6 +2163,33 @@
                 }
             }
 
+            // Footer
+
+            .page-title-footer {
+                @include mt-5;
+
+                .footer-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        @include display-flex;
+
+                        @include align-items-center;
+
+                        justify-content             : space-between;
+                    }
+                }
+                
+                .footer-text {
+                    .desc {
+                        .text-description {
+                            @include mb-0;
+                        }
+                    }
+                }
+            }
+
             @include media-breakpoint-down(md) {
 
                 // Header
@@ -2116,156 +2236,23 @@
                         }
                     }
                 }
-            }
-        }
-    }
 
-    // Performance Subject
+                // Footer
 
-    .performance-subject {
+                .page-title-footer {
+                    @include text-align-center;
 
-        // Primary
+                    .footer-wrapper {
 
-        &.primary {
+                        // Primary
 
-            // Header
-
-            .performance-subject-header {
-                @include mb-4;
-
-                .header-text {
-                    .title {
-                        .text-title {
-                            @include mb-0;
-
-                            svg {
-                                @include mr-1;
-
-                                width       : calc(20 / var(--vw) * var(--multiplier));
-                                height      : calc(20 / var(--vw) * var(--multiplier));
-                            }
+                        &.primary {
+                            @include display-block;
                         }
                     }
-                }
-            }
-
-            // Content
-
-            .performance-subject-content {
-                .content-wrapper {
-
-                    // Primary
-
-                    &.primary {
-                        > .wrapper-inner {
-                            @include mb-3;
-
-                            &:last-child {
-                                @include mb-0;
-                            }
-                        }
-
-                        .content-progress {
-                            .col-progress-outer {
-                                @include col-12;
-
-                                padding                         : 0 calc(25 / var(--vw) * var(--multiplier));;
-
-                                .col-progress-inner {
-                                    @include col-4;
-
-                                    @include px-1;
-
-                                    &:nth-child(1) {
-                                        .progress-tag {
-                                            .tag {
-                                                > span {
-                                                    background          : rgba($color-blue, 0.065);
-                                                }
-                                            }
-                                        }
-                                    }
-
-                                    &:nth-child(2) {
-                                        .progress-tag {
-                                            .tag {
-                                                > span {
-                                                    background          : rgba($color-green, 0.065);
-                                                }
-                                            }
-                                        }
-                                    }
-
-                                    &:nth-child(3) {
-                                        .progress-tag {
-                                            .tag {
-                                                > span {
-                                                    background          : rgba($color-purple, 0.065);
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            
-                            .progress-text {
-                                .title {
-                                    .text-title {
-                                        > span {
-                                            @include display-flex;
-
-                                            @include align-items-center;
-
-                                            @include h6;
-
-                                            justify-content             : space-between;
-
-                                            font-weight                 : var(--font-weight-medium);
-
-                                            color                       : var(--color-black);
-
-                                            > span {
-                                                &:last-child {
-                                                    font-weight         : var(--font-weight-regular);
-
-                                                    color               : var(--color-grey);
-                                                }
-                                            }
-                                        } 
-                                    }
-                                }
-                            }
-
-                            .progress-tag {
-                                @include text-align-center;
-
-                                .tag {
-                                    > span {
-                                        @include display-block;
-
-                                        @include p-2;
-
-                                        @include small;
-
-                                        background                  : var(--color-grey-super-light);
-
-                                        border-radius               : calc(2.5 / var(--vw) * var(--multiplier));
-
-                                        > span {
-                                            @include display-block;
-
-                                            &:first-child {
-                                                font-weight         : var(--font-weight-medium);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-
-                            .progress {
-                                height                              : calc(4 / var(--vw) * var(--multiplier));
-                            }
-                        }
+                    
+                    .footer-text {
+                        @include mb-2;
                     }
                 }
             }
@@ -2691,6 +2678,56 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    // Progress Total
+
+    .progress-total {
+
+        // Primary
+
+        &.primary {
+            @include mb-5;
+
+            .container {
+                @include pb-5;
+
+                border-bottom                   : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+            }
+
+            // Content
+
+            .progress-total-content {
+                .content-text {
+                    @include mb-4;
+                }
+
+                .content-progress {
+                    @include text-align-center;
+
+                    .progress {
+                        @include mb-2;
+
+                        height                  : calc(12.5 / var(--vw) * var(--multiplier));
+                    }
+
+                    .progress-caption {
+                        .caption {
+                            > span {
+                                @include p;
+
+                                color           : rgba($color-black, 0.75);
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                @include mb-4;
             }
         }
     }
@@ -3916,6 +3953,1246 @@
                                         }
                                     }
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Quinary
+
+        &.quinary {
+            @include my-5;
+
+            .container {
+                @include pb-5;
+
+                border-bottom                   : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+            }
+
+            // Content
+
+            .statistic-list-content {
+                .col-content-outer {
+                    @include col-12;
+
+                    @include px-4;
+
+                    .col-content-inner {
+                        @include col-3;
+
+                        @include px-2;
+                    }
+                }
+
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        @include display-flex;
+
+                        @include align-items-center;
+
+                        > .wrapper-inner {
+                            &:first-child {
+                                flex-shrink                 : 0;
+                            }
+                        }
+
+                        .content-icon {
+                            @include mr-3;
+
+                            .icon {
+                                @include display-inline-flex;
+
+                                @include align-items-center;
+
+                                justify-content             : center;
+
+                                width                       : calc(45 / var(--vw) * var(--multiplier));
+                                height                      : calc(45 / var(--vw) * var(--multiplier));
+
+                                background                  : var(--color-grey-super-light);
+
+                                border-radius               : calc(7.5 / var(--vw) * var(--multiplier));
+
+                                &.blue {
+                                    background              : rgba($color-blue, 0.075);
+
+                                    svg {
+                                        color               : var(--color-blue);
+                                    }
+                                }
+
+                                &.green {
+                                    background              : rgba($color-green, 0.075);
+
+                                    svg {
+                                        color               : var(--color-green);
+                                    }
+                                }
+
+                                &.purple {
+                                    background              : rgba($color-purple, 0.075);
+
+                                    svg {
+                                        color               : var(--color-purple);
+                                    }
+                                }
+
+                                &.orange {
+                                    background              : rgba($color-orange, 0.075);
+
+                                    svg {
+                                        color               : var(--color-orange);
+                                    }
+                                }
+
+                                svg {
+                                    width                   : calc(25 / var(--vw) * var(--multiplier));
+                                    height                  : calc(25 / var(--vw) * var(--multiplier));
+
+                                    color                   : var(--color-black);
+                                }
+                            }
+                        }
+
+                        .content-value {
+                            @include mb-minus-1;
+
+                            .value {
+                                > span {
+                                    @include h4;
+                                    
+                                    font-weight             : var(--font-weight-bold);
+                                }
+                            }
+                        }
+
+                        .content-text {
+                            .subtitle {
+                                .text-subtitle {
+                                    @include mb-0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                
+                @include my-4;
+
+                // Content
+
+                .statistic-list-content {
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            .content-icon {
+                                @include mr-2;
+
+                                .icon {
+                                    width                       : calc(40 / var(--vw) * var(--multiplier));
+                                    height                      : calc(40 / var(--vw) * var(--multiplier));
+
+                                    svg {
+                                        width                   : calc(20 / var(--vw) * var(--multiplier));
+                                        height                  : calc(20 / var(--vw) * var(--multiplier));
+                                    }
+                                }
+                            }
+
+                            .content-value {
+                                @include mb-0;
+
+                                .value {
+                                    > span {
+                                        @include h5;
+                                    }
+                                }
+                            }
+
+                            .content-text {
+                                .subtitle {
+                                    .text-subtitle {
+                                        @include small;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }  
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .statistic-list-content {
+                    .col-content-outer {
+                        .col-content-inner {
+                            @include col-6;
+
+                            @include mb-4;
+                        }
+                    }
+                }  
+            }
+        }
+    }
+
+    // Subject Highlight
+
+    .subject-highlight {
+
+        // Primary
+
+        &.primary {
+
+            // Content
+
+            .subject-highlight-content {
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        padding                 : calc(25 / var(--vw) * var(--multiplier));
+                        
+                        background              : rgba($color-blue, 0.075);
+
+                        border                  : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-blue, 0.35);
+                        border-radius           : calc(10 / var(--vw) * var(--multiplier));
+
+                        &.complete {
+                            background              : rgba($color-green, 0.075);
+
+                            border                  : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-green, 0.35);              
+                        }
+
+                        > .wrapper-inner {
+                            > .outer {
+                                @include display-flex;
+
+                                @include align-items-center;
+                                
+                                > .inner {
+                                    &:first-child {
+                                        @include mr-4;
+                                    }
+
+                                    &:last-child {
+                                        flex-shrink         : 0;
+                                    }
+                                    
+                                    .col-outer {
+                                        @include col-12;
+
+                                        .col-inner {
+                                            &:nth-child(1) {
+                                                @include col-3;
+                                            }
+
+                                            &:nth-child(2) {
+                                                @include col-9;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-text {
+                            @include mb-4;
+
+                            .title {
+                                .text-title {
+                                    @include h4;
+                                    
+                                    > span {
+                                        > span {
+                                            &:last-child {
+                                                font-weight     : var(--font-weight-medium);
+
+                                                color           : var(--color-grey); 
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-image {
+                            @include position-relative;
+
+                            .image {
+                                @include overflow-hidden;
+
+                                border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+                            }
+
+                            .anchor {
+                                @include position-absolute;
+
+                                @include display-inline-flex;
+
+                                @include align-items-center;
+
+                                justify-content         : center;
+
+                                width                   : calc(36.5 / var(--vw) * var(--multiplier));
+                                height                  : calc(36.5 / var(--vw) * var(--multiplier));
+
+                                top                     : 50%;
+                                left                    : 50%;
+
+                                transform               : translate(-50%, -50%);
+
+                                background              : var(--color-primary);
+
+                                border-radius           : 100%;
+
+                                svg {
+                                    color               : var(--color-white);
+                                }
+                            }
+                        }
+
+                        .content-tag {
+                            @include display-flex;
+
+                            @include align-items-center;
+
+                            @include mb-1;
+
+                            .tag {
+                                @include mr-2;
+
+                                &:last-child {
+                                    @include mr-0;
+                                }
+
+                                > span {
+                                    @include display-inline-block;
+
+                                    @include px-2;
+
+                                    @include small;
+
+                                    font-weight             : var(--font-weight-semibold);
+
+                                    line-height             : 1.85;
+
+                                    color                   : var(--color-black);
+
+                                    background              : var(--color-grey-super-light);
+
+                                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                    border-radius           : 50em;
+
+                                    &.duration {
+                                        background          : var(--color-grey-super-light);
+
+                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                    }
+
+                                    &.type {
+                                        color               : var(--color-blue);
+
+                                        background          : rgba($color-blue, 0.075);
+
+                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-blue, 0.25);
+                                    }
+
+                                    &.status {
+                                        color               : var(--color-green);
+                                        
+                                        background          : rgba($color-green, 0.075);
+
+                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-green, 0.25);
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-caption {
+                            @include mb-1;
+
+                            .caption {
+                                > span {
+                                    @include p;
+
+                                    color                   : var(--color-grey);
+                                }
+                            }
+                        }
+
+                        .content-progress {
+                            @include display-flex;
+
+                            @include align-items-center;
+
+                            .progress {
+                                @include width-100;
+
+                                @include mr-4;
+                            }
+
+                            .progress-caption {
+                                .caption {
+                                    > span {
+                                        @include small;
+
+                                        font-weight         : var(--font-weight-semibold);
+
+                                        color               : var(--color-grey);
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-button {
+                            @include display-flex;
+
+                            @include align-items-center;
+
+                            .button {
+                                @include mr-2;
+
+                                &:last-child {
+                                    @include mr-0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Content
+
+                .subject-highlight-content {
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            @include p-4;
+
+                            > .wrapper-inner {
+                                > .outer {
+                                    @include display-block;
+
+                                    > .inner {
+                                        &:first-child {
+                                            @include mr-3;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .content-text {
+                                .title {
+                                    .text-title {
+                                        @include h5;
+                                    }
+                                }
+                            }
+
+                            .content-button {
+                                @include mt-3;
+
+                                justify-content                 : flex-end;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .subject-highlight-content {
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            @include p-3;
+
+                            > .wrapper-inner {
+                                > .outer {
+                                    > .inner {
+                                        &:first-child {
+                                            @include mr-0;
+                                        }
+
+                                        .col-outer {
+                                            .col-inner {
+                                                &:nth-child(1) {
+                                                    @include col-12;
+
+                                                    @include mb-4;
+                                                }
+
+                                                &:nth-child(2) {
+                                                    @include col-12;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .content-button {
+                                @include display-block;
+
+                                .button {
+                                    @include mb-2;
+                                    @include mr-0;
+                                    
+                                    .btn-default {
+                                        @include display-block;
+
+                                        @include width-100;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Subject List
+
+    .subject-list {
+
+        // Primary
+
+        &.primary {
+
+            // Content
+
+            .subject-list-content {
+                .content-accordion {
+                    .accordion {
+                        .card {
+                            background                  : unset;
+
+                            border                      : none;
+
+                            .card-header {
+                                @include position-relative;
+
+                                @include p-3;
+
+                                background              : unset;
+
+                                border-bottom           : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+
+                                .header-wrapper {
+
+                                    // Primary
+
+                                    &.primary {
+                                        @include display-flex;
+
+                                        @include align-items-center;
+
+                                        justify-content         : space-between;
+
+                                        > .wrapper-inner {
+                                            @include display-flex;
+
+                                            @include align-items-center;
+
+                                            &:last-child {
+                                                width           : 30%;
+
+                                                flex-shrink     : 0;
+                                            }
+
+                                            > div {
+                                                @include mr-3;
+
+                                                &:last-child {
+                                                    @include mr-0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .header-anchor {
+                                    @include position-absolute;
+
+                                    @include width-100;
+                                    @include height-100;
+
+                                    top                 : 0;
+                                    left                : 0;
+                                }
+
+                                .header-text {
+                                    .title {
+                                        .text-title {
+                                            @include mb-0;
+                                        }
+                                    }
+                                }
+
+                                .header-info {
+                                    @include width-100;
+
+                                    .col-info-outer {
+                                        @include col-12;
+
+                                        @include px-4;
+
+                                        .col-info-inner {
+                                            @include col-4;
+
+                                            @include px-2;
+                                        }
+                                    }
+
+                                    .info-wrapper {
+
+                                        // Primary
+
+                                        &.primary {
+                                            @include text-align-center;
+
+                                            .info-value {
+                                                .value {
+                                                    > span {
+                                                        @include h5;
+
+                                                        font-weight             : var(--font-weight-bold); 
+                                                    }
+                                                }
+                                            }
+
+                                            .info-text {
+                                                .subtitle {
+                                                    .text-subtitle {
+                                                        @include small;
+                                                    }
+                                                }
+                                            }
+
+                                            .info-progress {
+                                                .progress-value {
+                                                    .value {
+                                                        > span {
+                                                            @include h5;
+
+                                                            font-weight             : var(--font-weight-bold);      
+                                                        }
+                                                    }
+                                                }
+
+                                                .progress {
+                                                    @include mt-1;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .card-body {
+                                background                  : var(--color-grey-super-light);
+
+                                .body-list {
+                                    > ul {
+                                        @include pl-0;
+
+                                        list-style          : none;
+
+                                        > li {
+                                            @include mb-3;
+
+                                            &:last-child {
+                                                @include mb-0;
+                                            }
+
+                                            .list-wrapper {
+
+                                                // Primary
+
+                                                &.primary {
+                                                    @include p-3;
+
+                                                    background              : var(--color-white);
+
+                                                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
+
+                                                    > .wrapper-inner {                                                        
+                                                        > .outer {
+                                                            @include display-flex;
+
+                                                            @include align-items-center;
+
+                                                            justify-content         : space-between;
+
+                                                            > .inner {
+                                                                @include display-flex;
+
+                                                                @include align-items-center;
+
+                                                                > div {
+                                                                    @include mr-3;
+
+                                                                    &:last-child {
+                                                                        @include mr-0;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    .list-text {
+                                                        .title {
+                                                            .text-title {
+                                                                @include mb-0;
+
+                                                                @include h6;
+                                                            }
+                                                        }
+
+                                                        .subtitle {
+                                                            .text-subtitle {
+                                                                @include mb-0;
+
+                                                                @include small;
+                                                            }
+                                                        }
+                                                    }
+
+                                                    .list-tag {
+                                                        @include display-flex;
+
+                                                        @include align-items-center;
+
+                                                        .tag {
+                                                            @include mr-1;
+
+                                                            &:last-child {
+                                                                @include mr-0;
+                                                            }
+
+                                                            > span {
+                                                                @include display-inline-block;
+
+                                                                @include px-2;
+
+                                                                @include small;
+
+                                                                font-weight             : var(--font-weight-semibold);
+
+                                                                line-height             : 1.85;
+
+                                                                color                   : var(--color-black);
+
+                                                                border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                                                border-radius           : 50em;
+
+                                                                &.green {
+                                                                    color               : darken($color-green, 10%);
+
+                                                                    background          : rgba($color-green, 0.15);
+
+                                                                    border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-green, 0.25);
+                                                                }
+
+                                                                &.blue {
+                                                                    color               : darken($color-blue, 10%);
+
+                                                                    background          : rgba($color-blue, 0.15);
+
+                                                                    border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-blue, 0.25);
+                                                                }
+
+                                                                &.yellow {
+                                                                    color               : darken($color-yellow, 20%);
+
+                                                                    background          : rgba($color-yellow, 0.15);
+
+                                                                    border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-yellow, 0.25);
+                                                                }
+
+                                                                &.red {
+                                                                    color               : darken($color-red, 10%);
+
+                                                                    background          : rgba($color-red, 0.15);
+
+                                                                    border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-red, 0.25);
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                    .list-progress {
+                                                        @include text-align-right;
+
+                                                        width                           : calc(100 / var(--vw) * var(--multiplier));
+
+                                                        .progress-value {
+                                                            .value {
+                                                                > span {
+                                                                    @include p;
+                                                                    
+                                                                    font-weight         : var(--font-weight-medium);
+                                                                }
+                                                            }
+                                                        }
+
+                                                        .progress {
+                                                            @include mt-1;
+                                                        }
+                                                    }
+
+                                                    .list-info {
+                                                        @include pt-3;
+                                                        @include pb-2;
+                                                        @include mt-4;
+
+                                                        border-top          : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+
+                                                        .col-info-outer {
+                                                            @include col-12;
+
+                                                            @include px-4;
+
+                                                            .col-info-inner {
+                                                                @include col-3;
+
+                                                                @include px-2;
+                                                            }
+                                                        }
+
+                                                        .info-wrapper {
+
+                                                            // Primary
+
+                                                            &.primary {
+                                                                @include display-flex;
+
+                                                                @include align-items-center;
+
+                                                                > div {
+                                                                    @include mr-2;
+
+                                                                    &:last-child {
+                                                                        @include mr-0;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        .info-tag {
+                                                            @include display-flex;
+
+                                                            @include align-items-center;
+
+                                                            .tag {
+                                                                @include mr-1;
+
+                                                                &:last-child {
+                                                                    @include mr-0;
+                                                                }
+
+                                                                > span {
+                                                                    @include display-inline-block;
+
+                                                                    @include px-2;
+
+                                                                    @include small;
+
+                                                                    font-weight             : var(--font-weight-semibold);
+
+                                                                    line-height             : 1.85;
+
+                                                                    color                   : var(--color-black);
+
+                                                                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                                                    border-radius           : 50em;
+
+                                                                    &.green {
+                                                                        color               : darken($color-green, 10%);
+
+                                                                        background          : rgba($color-green, 0.15);
+
+                                                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-green, 0.25);
+                                                                    }
+
+                                                                    &.blue {
+                                                                        color               : darken($color-blue, 10%);
+
+                                                                        background          : rgba($color-blue, 0.15);
+
+                                                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-blue, 0.25);
+                                                                    }
+
+                                                                    &.yellow {
+                                                                        color               : darken($color-yellow, 20%);
+
+                                                                        background          : rgba($color-yellow, 0.15);
+
+                                                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-yellow, 0.25);
+                                                                    }
+
+                                                                    &.red {
+                                                                        color               : darken($color-red, 10%);
+
+                                                                        background          : rgba($color-red, 0.15);
+
+                                                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-red, 0.25);
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Content
+
+                .subject-list-content {
+                    .content-accordion {
+                        .accordion {
+                            .card {
+                                .card-header {
+                                    .header-wrapper {
+
+                                        // Primary
+
+                                        &.primary {
+                                            > .wrapper-inner {
+                                                &:last-child {
+                                                    width               : 45%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .card-body {
+                                    .body-list {
+                                        > ul {
+                                            > li {
+                                                .list-wrapper {
+
+                                                    // Primary
+
+                                                    &.primary {
+                                                        .list-info {
+                                                            .col-info-outer {
+                                                                .col-info-inner {
+                                                                    @include col-12;
+
+                                                                    max-width           : 21.66666666666667%;
+
+                                                                    &:last-child {
+                                                                        max-width       : 35%;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .subject-list-content {
+                    .content-accordion {
+                        .accordion {
+                            .card {
+                                .card-header {
+                                    .header-wrapper {
+
+                                        // Primary
+
+                                        &.primary {
+                                            @include align-items-flex-start;
+
+                                            flex-direction              : column;
+                                            
+                                            > .wrapper-inner {
+                                                &:first-child {
+                                                    @include mb-2;
+                                                }
+
+                                                &:last-child {
+                                                    @include width-100;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .card-body {
+                                    @include p-3;
+
+                                    .body-list {
+                                        > ul {
+                                            > li {
+                                                .list-wrapper {
+
+                                                    // Primary
+
+                                                    &.primary {
+                                                        flex-direction                  : column;
+
+                                                        > .wrapper-inner {
+                                                            > .outer {
+                                                                @include align-items-flex-start;
+
+                                                                flex-direction          : column;
+
+                                                                > .inner {
+                                                                    &:first-child {
+                                                                        @include mb-2;
+                                                                    }
+
+                                                                    &:last-child {
+                                                                        @include width-100;
+
+                                                                        > div {
+                                                                            @include mr-auto;
+
+                                                                            &:last-child {
+                                                                                @include mr-0;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                        .list-info {
+                                                            @include pb-0;
+                                                            
+                                                            .col-info-outer {
+                                                                .col-info-inner {
+                                                                    @include mb-2;
+
+                                                                    max-width           : 50%;
+
+                                                                    &:last-child {
+                                                                        max-width       : 50%;
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            .info-wrapper {
+
+                                                                // Primary
+
+                                                                &.primary {
+                                                                    flex-wrap           : wrap;
+
+                                                                    .info-tag {
+                                                                        @include display-block;
+
+                                                                        @include width-100;
+
+                                                                        @include mt-1;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Subject Performance
+
+    .subject-performance {
+
+        // Primary
+
+        &.primary {
+
+            // Header
+
+            .subject-performance-header {
+                @include mb-4;
+
+                .header-text {
+                    .title {
+                        .text-title {
+                            @include mb-0;
+
+                            svg {
+                                @include mr-1;
+
+                                width       : calc(20 / var(--vw) * var(--multiplier));
+                                height      : calc(20 / var(--vw) * var(--multiplier));
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Content
+
+            .subject-performance-content {
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        > .wrapper-inner {
+                            @include mb-3;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+                        }
+
+                        .content-progress {
+                            .col-progress-outer {
+                                @include col-12;
+
+                                padding                         : 0 calc(25 / var(--vw) * var(--multiplier));;
+
+                                .col-progress-inner {
+                                    @include col-4;
+
+                                    @include px-1;
+
+                                    &:nth-child(1) {
+                                        .progress-tag {
+                                            .tag {
+                                                > span {
+                                                    background          : rgba($color-blue, 0.065);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:nth-child(2) {
+                                        .progress-tag {
+                                            .tag {
+                                                > span {
+                                                    background          : rgba($color-green, 0.065);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:nth-child(3) {
+                                        .progress-tag {
+                                            .tag {
+                                                > span {
+                                                    background          : rgba($color-purple, 0.065);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            .progress-text {
+                                .title {
+                                    .text-title {
+                                        > span {
+                                            @include display-flex;
+
+                                            @include align-items-center;
+
+                                            @include h6;
+
+                                            justify-content             : space-between;
+
+                                            font-weight                 : var(--font-weight-medium);
+
+                                            color                       : var(--color-black);
+
+                                            > span {
+                                                &:last-child {
+                                                    font-weight         : var(--font-weight-regular);
+
+                                                    color               : var(--color-grey);
+                                                }
+                                            }
+                                        } 
+                                    }
+                                }
+                            }
+
+                            .progress-tag {
+                                @include text-align-center;
+
+                                .tag {
+                                    > span {
+                                        @include display-block;
+
+                                        @include p-2;
+
+                                        @include small;
+
+                                        background                  : var(--color-grey-super-light);
+
+                                        border-radius               : calc(2.5 / var(--vw) * var(--multiplier));
+
+                                        > span {
+                                            @include display-block;
+
+                                            &:first-child {
+                                                font-weight         : var(--font-weight-medium);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .progress {
+                                height                              : calc(4 / var(--vw) * var(--multiplier));
                             }
                         }
                     }
