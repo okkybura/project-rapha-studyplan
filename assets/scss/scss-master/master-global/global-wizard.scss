@@ -96,6 +96,371 @@
     }
 }
 
+// Modal
+
+.modal {
+
+    // Modal Detail
+
+    &.modal-detail {
+
+        // Primary
+
+        &.primary {
+
+            .modal-dialog {
+                max-width               : calc(600 / var(--vw) * var(--multiplier));
+            }
+
+            // Header
+
+            .modal-header {
+                border                  : none;
+
+                .header-text {
+                    .title {
+                        .text-title {
+                            @include mb-0;
+
+                            @include h5;
+                        }
+                    }
+
+                    .subtitle {
+                        .text-subtitle {
+                            @include small;
+                        }
+                    }
+                }
+            }
+
+            // Body
+
+            .modal-body {
+                .body-list {
+                    > ul {
+                        @include pl-0;
+
+                        list-style          : none;
+
+                        > li {
+                            @include position-relative;
+
+                            @include mb-3;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+
+                            > input {
+                                @include position-absolute;
+
+                                z-index             : 10;
+
+                                cursor              : pointer;
+
+                                width               : 40%;
+                                height              : 60%;
+
+                                opacity             : 0;
+
+                                top                 : 0;
+                                left                : 0; 
+                            }
+
+                            > input:checked ~ .list-wrapper.primary {
+                                border              : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-blue);
+                            }
+
+                            .list-wrapper {
+
+                                // Primary
+
+                                &.primary {
+                                    @include p-3;
+
+                                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
+
+                                    &.active {
+                                        
+                                    }
+
+                                    .col-wrapper-outer {
+                                        @include col-12;
+
+                                        @include px-4;
+
+                                        .col-wrapper-inner {
+                                            @include px-2;
+
+                                            &:first-child {
+                                                @include col-7;
+                                            }
+
+                                            &:last-child {
+                                                @include col-5;
+                                            }
+
+                                            > .outer {
+                                                @include display-flex;
+
+                                                @include align-items-center;
+
+                                                @include mb-4;
+                                            }
+                                        }
+                                    }
+
+                                    .list-icon {
+                                        @include mr-3;
+
+                                        .icon {
+                                            @include display-inline-flex;
+
+                                            @include align-items-center;
+
+                                            justify-content             : center;
+
+                                            width                       : calc(30 / var(--vw) * var(--multiplier));
+                                            height                      : calc(30 / var(--vw) * var(--multiplier));
+
+                                            background                  : var(--color-grey-super-light);
+
+                                            border-radius               : calc(5 / var(--vw) * var(--multiplier));
+
+                                            // Blue
+
+                                            &.blue {
+                                                background              : rgba($color-blue, 0.10);
+
+                                                svg {
+                                                    color               : var(--color-blue);
+                                                }
+                                            }
+
+                                            // Green
+
+                                            &.green {
+                                                background              : rgba($color-green, 0.10);
+
+                                                svg {
+                                                    color               : var(--color-green);
+                                                }
+                                            }
+
+                                            // Yellow
+
+                                            &.yellow {
+                                                background              : rgba($color-yellow, 0.10);
+
+                                                svg {
+                                                    color               : var(--color-yellow);
+                                                }
+                                            }
+
+                                            svg {
+                                                width                   : calc(15 / var(--vw) * var(--multiplier));
+                                                height                  : calc(15 / var(--vw) * var(--multiplier));
+                                            }
+                                        }
+                                    }
+
+                                    .list-text {
+                                        .title {
+                                            .text-title {
+                                                @include mb-0;
+
+                                                @include h6;
+
+                                                font-weight             : var(--font-weight-medium);
+                                            }
+                                        }
+
+                                        .subtitle {
+                                            .text-subtitle {
+                                                @include mb-0;
+
+                                                @include small;
+                                            }
+                                        }
+                                    }
+
+                                    .list-form {
+                                        .form-group {
+                                            @include mb-0;
+
+                                            .group-wrapper {
+
+                                                // Primary
+
+                                                &.primary {
+                                                    @include display-flex;
+
+                                                    @include align-items-center;
+                                                }
+                                            }
+
+                                            .form-value {
+                                                @include mx-5;
+
+                                                .value {
+                                                    > span {
+                                                        font-weight         : var(--font-weight-semibold);
+                                                    }
+                                                }
+                                            }
+
+                                            .form-button {
+                                                .button {
+                                                    .btn-default {
+                                                        > span {
+                                                            @include px-2;
+                                                        }
+
+                                                        &:hover {
+                                                            > span {
+                                                                &:before {
+                                                                    background          : rgba($color-grey, 0.075);
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .list-detail {
+                                        @include p-3;
+
+                                        background              : var(--color-grey-super-light);
+
+                                        border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                        border-radius           : calc(7.5 / var(--vw) * var(--multiplier));
+
+                                        // Blue
+
+                                        &.blue {
+                                            background              : rgba($color-blue, 0.05);
+
+                                            border                  : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-blue, 0.25);
+                                        }
+
+                                        > ul {
+                                            @include pl-0;
+
+                                            list-style          : none;
+
+                                            > li {
+                                                @include display-flex;
+
+                                                @include align-items-flex-end;
+
+                                                @include mb-1;
+
+                                                justify-content         : space-between;
+
+                                                &:last-child {
+                                                    @include mb-0;
+                                                }
+
+                                                > span {
+                                                    @include display-inline-block;
+
+                                                    @include small;
+
+                                                    &.caption {
+                                                        color           : var(--color-grey);
+                                                    }
+
+                                                    &.value {
+                                                        font-weight     : var(--font-weight-bold);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Footer
+
+            .modal-footer {
+                .footer-button {
+                    @include display-flex;
+
+                    @include align-items-center;
+
+                    .button {
+                        @include mr-2;
+
+                        &:last-child {
+                            @include mr-0;
+                        }
+
+                        .btn-default {
+                            > span {
+                                @include px-3;
+
+                                > span {
+                                    &.text {
+                                        @include m-0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Header
+
+                .modal-header {
+                    @include pb-0;
+                }
+
+                // Body
+
+                .modal-body {
+                    .body-list {
+                        > ul {
+                            > li {
+                                .list-wrapper {
+
+                                    // Primary
+
+                                    &.primary {
+                                        .col-wrapper-outer {
+                                            .col-wrapper-inner {
+                                                &:first-child {
+                                                    @include col-12;
+
+                                                    @include mb-3;
+                                                }
+
+                                                &:last-child {
+                                                    @include col-12;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 // Page
 
 .page {
@@ -2092,6 +2457,512 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    // Form Create Plan
+
+    .form-create-plan {
+        
+        // Primary
+
+        &.primary {
+
+            // Header
+
+            .form-create-plan-header {
+                @include mb-5;
+
+                .header-text {
+                    .title {
+                        .text-title {
+                            @include mb-0;
+                        }
+                    }
+                }
+            }
+
+            // Content
+
+            .form-create-plan-content {
+                .col-content-outer {
+                    @include col-12;
+                    
+                    @include px-4;
+
+                    .col-content-inner {
+                        @include col-6;
+
+                        @include px-2;
+                    }
+                }
+
+                .content-wrapper {
+
+                    // Primary
+
+                    &.primary {
+                        > .wrapper-inner {
+                            @include mb-4;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+                        }
+
+                        .content-text {
+                            @include mb-3;
+
+                            .title {
+                                .text-title {
+                                    @include h6;
+                                }
+                            }
+                        }
+
+                        .content-form {
+                            .col-form-outer {
+                                @include col-12;
+                                
+                                @include px-4;
+
+                                .col-form-inner {
+                                    @include col-6;
+
+                                    @include px-2;
+                                    @include mb-3;
+                                }
+                            }
+
+                            .form-group {
+                                @include mb-0;
+
+                                &.special {
+                                    @include mb-3;
+
+                                    &:last-child {
+                                        @include mb-0;
+                                    }
+
+                                    .group-wrapper {
+
+                                        // Primary
+
+                                        &.primary {
+                                            @include display-flex;
+
+                                            @include align-items-center;
+
+                                            @include py-2;
+                                            @include px-3;
+
+                                            cursor                  : pointer;
+
+                                            justify-content         : space-between;
+
+                                            background              : var(--color-grey-super-light);
+
+                                            border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                            border-radius           : calc(10 / var(--vw) * var(--multiplier));
+
+                                            > .wrapper-inner {
+                                                @include display-flex;
+                                                
+                                                @include align-items-center;
+                                            }
+                                        }
+                                    }
+
+                                    .form-check {
+                                        @include p-0;
+                                        @include pl-4;
+
+                                        border              : unset;
+
+                                        .form-check-input {
+                                            @include mt-0;
+                                        }
+
+                                        .form-check-label {
+                                            > span {
+                                                > span {
+                                                    &.title {
+                                                        @include mb-0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .form-value {
+                                        @include mx-5;
+
+                                        .value {
+                                            > span {
+                                                font-weight         : var(--font-weight-semibold);
+                                            }
+                                        }
+                                    }
+
+                                    .form-button {
+                                        .button {
+                                            .btn-default {
+                                                > span {
+                                                    @include px-2;
+                                                }
+
+                                                &:hover {
+                                                    > span {
+                                                        &:before {
+                                                            background          : rgba($color-grey, 0.075);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .form-radio {
+                                    @include display-flex;
+                                    
+                                    @include align-items-center;
+
+                                    @include p-3;
+
+                                    cursor                  : pointer;
+
+                                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
+
+                                    .form-radio-input {
+                                        @include mr-2;
+
+                                        accent-color        : var(--color-black);
+
+                                        width               : calc(15 / var(--vw) * var(--multiplier));
+                                        height              : calc(15 / var(--vw) * var(--multiplier));
+                                    }
+
+                                    .form-radio-label {
+                                        @include mb-0;
+
+                                        cursor             : pointer;
+
+                                        > span {
+                                            @include display-block;
+
+                                            > span {
+                                                @include display-block;
+
+                                                &.title {
+                                                    @include mb-1;
+
+                                                    font-weight     : var(--font-weight-medium);
+
+                                                    > svg {
+                                                        @include mr-1;
+                                                    }
+                                                }
+
+                                                &.subtitle {
+                                                    color           : var(--color-grey);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .form-check {
+                                    @include display-flex;
+                                    
+                                    @include align-items-center;
+
+                                    @include p-3;
+                                    @include pl-5;
+
+                                    cursor                  : pointer;
+
+                                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
+
+                                    .form-check-input {
+                                        @include mr-2;
+
+                                        accent-color        : var(--color-black);
+
+                                        width               : calc(15 / var(--vw) * var(--multiplier));
+                                        height              : calc(15 / var(--vw) * var(--multiplier));
+                                    }
+
+                                    .form-check-label {
+                                        @include mb-0;
+                                        @include ml-2;
+
+                                        cursor             : pointer;
+
+                                        > span {
+                                            @include display-block;
+
+                                            > span {
+                                                @include display-block;
+
+                                                &.title {
+                                                    @include display-flex;
+
+                                                    @include align-items-center;
+
+                                                    @include mb-1;
+
+                                                    font-weight     : var(--font-weight-medium);
+
+                                                    > span {
+                                                        @include mr-1;
+                                                        
+                                                        @include h5;
+                                                    }
+
+                                                    > svg {
+                                                        @include mr-1;
+                                                    }
+                                                }
+
+                                                &.subtitle {
+                                                    color           : var(--color-grey);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-duration {
+                            @include text-align-center;
+
+                            @include p-5;
+                            @include mb-4;
+            
+                            background              : rgba($color-blue, 0.075);
+
+                            border                  : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-blue, 0.15);
+                            border-radius           : calc(10 / var(--vw) * var(--multiplier));
+
+                            .duration {
+                                > span {
+                                    @include display-block;
+
+                                    > span {
+                                        @include display-block;
+
+                                        &.value {
+                                            @include h2;
+
+                                            font-weight         : var(--font-weight-bold);  
+
+                                            color               : darken($color-blue, 15%);
+                                        }
+
+                                        &.subtitle {
+                                            @include small;
+
+                                            color               : darken($color-blue, 15%);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-info {
+                            .col-info-outer {
+                                @include col-12;
+
+                                @include px-4;
+
+                                .col-info-inner {
+                                    @include col-6;
+
+                                    @include px-2;
+                                    @include mb-3;
+
+                                    &:last-child {
+                                        @include col-12;
+                                    }
+                                }
+                            }
+
+                            .info-wrapper {
+
+                                // Primary
+
+                                &.primary {
+                                    @include text-align-center;
+
+                                    @include p-4;
+
+                                    background              : var(--color-white);
+
+                                    border                  : calc(1 / var(--vw) * var(--multiplier)) solid var(--color-grey-light);
+                                    border-radius           : calc(10 / var(--vw) * var(--multiplier));
+
+                                    &.special {
+                                        border              : calc(1 / var(--vw) * var(--multiplier)) solid rgba($color-blue, 0.075);
+                                    }
+
+                                    .info-value {
+                                        @include mb-minus-1;
+
+                                        .value {
+                                            > span {
+                                                @include h2;
+
+                                                font-weight         : var(--font-weight-bold);
+                                            }
+                                        }
+                                    }
+
+                                    .info-date {
+                                        .date {
+                                            > span {
+                                                @include h5;
+
+                                                font-weight         : var(--font-weight-bold);  
+
+                                                color               : darken($color-blue, 15%);
+                                            }
+                                        }
+                                    }
+
+                                    .info-caption {
+                                        .caption {
+                                            > span {
+                                                @include small;
+
+                                                color               : var(--color-grey);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Footer
+
+            .form-create-plan-footer {
+                @include mt-5;
+
+                .footer-button {
+                    @include display-flex;
+
+                    @include align-items-center;
+
+                    .button {
+                        @include mr-2;
+
+                        &:last-child {
+                            @include mr-0;
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+
+                // Content
+
+                .form-create-plan-content {
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            .content-duration {
+                                @include p-4;
+
+                                .duration {
+                                    > span {
+                                        > span {
+                                            &.value {
+                                                @include h3;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .content-info {
+                                .info-wrapper {
+
+                                    // Primary
+
+                                    &.primary {
+                                        .info-value {
+                                            .value {
+                                                > span {
+                                                    @include h4;
+                                                }
+                                            }
+                                        }
+
+                                        .info-date {
+                                            .date {
+                                                > span {
+                                                    @include h6;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+
+                // Content
+
+                .form-create-plan-content {
+                    .col-content-outer {
+                        .col-content-inner {
+                            @include col-12;
+
+                            @include mb-4;
+
+                            &:last-child {
+                                @include mb-0;
+                            }
+                        }
+                    }
+
+                    .content-wrapper {
+
+                        // Primary
+
+                        &.primary {
+                            .content-form {
+                                .col-form-outer {
+                                    .col-form-inner {
+                                        @include col-12;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Footer
+
+                .form-create-plan-footer {
+                    .footer-button {
+                        justify-content             : space-between;
                     }
                 }
             }
