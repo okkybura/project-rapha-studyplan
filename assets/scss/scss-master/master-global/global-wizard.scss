@@ -2598,7 +2598,9 @@
                                     }
 
                                     .form-value {
-                                        @include mx-5;
+                                        @include text-align-center;
+
+                                        width                       : calc(115 / var(--vw) * var(--multiplier));
 
                                         .value {
                                             > span {

@@ -11918,8 +11918,8 @@ svg {
   margin-bottom: 0 !important;
 }
 .wizard .form-create-plan.primary .form-create-plan-content .content-wrapper.primary .content-form .form-group.special .form-value {
-  margin-left: calc(35 / var(--vw) * var(--multiplier)) !important;
-  margin-right: calc(35 / var(--vw) * var(--multiplier)) !important;
+  text-align: center;
+  width: calc(115 / var(--vw) * var(--multiplier));
 }
 .wizard .form-create-plan.primary .form-create-plan-content .content-wrapper.primary .content-form .form-group.special .form-value .value > span {
   font-weight: var(--font-weight-semibold);

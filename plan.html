@@ -364,7 +364,7 @@
                                                                     <div class="wrapper-inner">
                                                                         <div class="form-button">
                                                                             <div class="button">
-                                                                                <button type="button" class="btn btn-block btn-default btn-outline primary">
+                                                                                <button type="button" class="btn btn-block btn-default btn-outline primary btnMinus">
                                                                                     <span class="wrapper">
                                                                                         <span class="icon">
                                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -378,14 +378,14 @@
                                                                         </div>
                                                                         <div class="form-value">
                                                                             <div class="value">
-                                                                                <span>
+                                                                                <span class="valueTime">
                                                                                     0m
                                                                                 </span>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-button">
                                                                             <div class="button">
-                                                                                <button type="button" class="btn btn-block btn-default btn-outline primary">
+                                                                                <button type="button" class="btn btn-block btn-default btn-outline primary btnPlus">
                                                                                     <span class="wrapper">
                                                                                         <span class="icon">
                                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -418,7 +418,7 @@
                                                                     <div class="wrapper-inner">
                                                                         <div class="form-button">
                                                                             <div class="button">
-                                                                                <button type="button" class="btn btn-block btn-default btn-outline primary">
+                                                                                <button type="button" class="btn btn-block btn-default btn-outline primary btnMinus">
                                                                                     <span class="wrapper">
                                                                                         <span class="icon">
                                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -432,14 +432,14 @@
                                                                         </div>
                                                                         <div class="form-value">
                                                                             <div class="value">
-                                                                                <span>
+                                                                                <span class="valueTime">
                                                                                     0m
                                                                                 </span>
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-button">
                                                                             <div class="button">
-                                                                                <button type="button" class="btn btn-block btn-default btn-outline primary">
+                                                                                <button type="button" class="btn btn-block btn-default btn-outline primary btnPlus">
                                                                                     <span class="wrapper">
                                                                                         <span class="icon">
                                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -868,6 +868,39 @@
     <script>
         $('#btnCreatePlan').on('click', function () {
             $('.form-create-plan').removeClass('d-none');
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.form-group.special').forEach(control => {
+            let time = 0;
+            const display = control.querySelector('.valueTime');
+            const plus = control.querySelector('.btnPlus');
+            const minus = control.querySelector('.btnMinus');
+
+            function updateDisplay() {
+                const hours = Math.floor(time / 60);
+                const minutes = time % 60;
+                if (hours > 0) {
+                    display.textContent = minutes > 0 ? `${hours}h ${minutes}m` : `${hours}h`;
+                } else {
+                    display.textContent = `${minutes}m`;
+                }
+            }
+
+            plus.addEventListener('click', () => {
+                time += 15;
+                updateDisplay();
+            });
+
+            minus.addEventListener('click', () => {
+                if (time >= 15) {
+                    time -= 15;
+                    updateDisplay();
+                }
+            });
+
+            updateDisplay();
         });
     </script>
 </body>
